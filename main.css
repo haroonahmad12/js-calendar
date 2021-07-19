@@ -30,17 +30,18 @@ header {
     border: 1px solid black;
 }
 
-.month-name {
+.month-row {
     display: flex;
     flex-basis: 80%;
     background-color: gray;
     width: 100%;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .days-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    outline: 1px solid black;
 }
