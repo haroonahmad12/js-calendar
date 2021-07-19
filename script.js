@@ -1,3 +1,5 @@
+// HOLA SOY JOSEP TRABAJANDO EL JS
+
 var months = [
     "January",
     "February",
