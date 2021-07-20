@@ -11,8 +11,48 @@
 
 <body>
     <div class="modal">
-        <div>Stuff inside Modal</div>
-        <button class="close">&times;</button>
+
+        <form class="modalObjects">
+            <h2>New Event</h2>
+            <div>
+                <label for="title">Title:</label> <input id="titleName" type="text" /></div>
+            <div><label>Initial Date:</label>
+                <input type="datetime-local" id="dateTime" /></div>
+            <div>
+                <input type="checkbox">End Date:</input>
+            </div>
+
+            <!--If checked, add new input field for End Date-->
+
+            <div>
+                </dive><input type="checkbox">Remind me when this event expires</input>
+            </div>
+
+            <div>
+                <label for="description">Description:</label><input id="description" class="desInput" />
+
+            </div>
+
+            <div>
+                <label for="typeEvent">Event Type:</label><select id="typeEvent">
+                    
+                    <option>Meeting</option>
+                    <option>Interview</option>
+                    <option>Sports</option>
+                    <option>Doctors Appointment</option>
+                    <option>Travel Schedule</option>
+                </select>
+            </div>
+
+            <div class="doneCancelButtons">
+                <button class="cancel" id="cancel-btn">Cancel</button>
+                <button class="create" id="create-btn">Create</button>
+            </div>
+        </form>
+        <button class="close" id="closeEvent">&times;</button>
+    </div>
+
+
     </div>
     <header>
         <h2 class="header-calendar">JS Calendar</h2>
@@ -24,8 +64,10 @@
         <div class="month">
             <div class="month-row">
                 <button class="prev-month"><</button>
-                <span class="month-name">July</span>
-
+                <div class="timeMonthDiv">
+                    <span class="month-name"></span>
+                    <span class="currentDate"></span>
+                </div>
                 <button class="next-month">></button>
             </div>
 
@@ -45,40 +87,41 @@
                 <span class="days"></span>
                 <span class="days"></span>
                 <span class="days"></span>
-                <span class="days">1</span>
-                <span class="days">2</span>
-                <span class="days">3</span>
-                <span class="days">4</span>
-                <span class="days">5</span>
-                <span class="days">6</span>
-                <span class="days">7</span>
-                <span class="days">8</span>
-                <span class="days">9</span>
-                <span class="days">10</span>
-                <span class="days">11</span>
-                <span class="days">12</span>
-                <span class="days">13</span>
-                <span class="days">14</span>
-                <span class="days">15</span>
-                <span class="days">16</span>
-                <span class="days">17</span>
-                <span class="days">18</span>
-                <span class="days">19</span>
-                <span class="days">20</span>
-                <span class="days">21</span>
-                <span class="days">22</span>
-                <span class="days">23</span>
-                <span class="days">24</span>
-                <span class="days">25</span>
-                <span class="days">26</span>
-                <span class="days">27</span>
-                <span class="days">28</span>
-                <span class="days">29</span>
-                <span class="days">30</span>
-                <span class="days">31</span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
+                <span class="days"></span>
             </div>
         </div>
     </main>
 </body>
+<script src="/script.js"></script>
 
 </html>
