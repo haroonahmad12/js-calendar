@@ -15,11 +15,11 @@ var listMonths = [
 
 let date = new Date();
 
-let month = date.getMonth();
+let month = date.getMonth(); //Used for Month Name in the Heading
 
 //Last Day
 
-let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate(); // returns number of days of the month
 
 // Add Event Button
 let newEventAdder = document.getElementById("newEvent");
@@ -67,9 +67,9 @@ function saveData(e) {
 
     localStorage.setItem("Title", inputTitle.value);
     document.querySelector(".modal").style.display = "none";
-    /*var dateAndtime = document.getElementById("dateTime");
-                                                                                                                                                                                                                                                    localStorage.setItem("When", dateAndtime.value);*/
 }
+
+// Add days to the Grid
 
 function addDays() {
     document.querySelector(".month-name").innerHTML = listMonths[month];
@@ -83,8 +83,21 @@ function addDays() {
 
 addDays();
 
-function updateDate() {
-    document.querySelector(".currentDate").innerHTML = date;
+// Update time every Second
+
+function updateTime() {
+    var now = new Date();
+
+    document.querySelector(".currentDate").innerHTML = now;
+}
+updateTime();
+setInterval(updateTime, 1000);
+
+//Arranging the Days
+
+function arrangeDays() {
+    let daysName = document.querySelectorAll(".name-day");
+    console.log(daysName);
 }
 
-updateDate();
+arrangeDays();
