@@ -1,12 +1,24 @@
+* {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
 header {
     border: 1px solid black;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
 }
 
 body {
-    width: 80%;
+    width: 100%;
     margin: auto;
-    font-family: "Courier New", Courier, monospace;
+}
+
+.timeMonthDiv {
+    display: flex;
+    flex-direction: column;
 }
 button{
     width: 2rem;
@@ -14,12 +26,17 @@ button{
 }
 
 .header-calendar {
-    flex-basis: 80%;
+    flex-basis: 100%;
     text-align: center;
 }
 
 .AddEvent {
-    flex-basis: 20%;
+    width: 10rem;
+    height: 2rem;
+    margin-right: 2rem;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(84, 173, 252);
 }
 
 .main-window {
@@ -27,9 +44,11 @@ button{
     border: 1px solid black;
     justify-content: center;
     padding: 1.25rem;
+    width: 100%;
+    margin: auto;
 }
 
-.days-name {
+.days-name-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 6;
@@ -41,6 +60,12 @@ button{
     width: 90%;
     border: 1px solid black;
     align-content: center;
+}
+
+.month-name {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0.5rem;
 }
 
 .month-row {
@@ -70,11 +95,33 @@ button{
     background-color: rgba(0, 0, 0, 0.4);
     margin: auto;
     text-align: center;
-    width: 80%;
+    width: 100%;
     height: 100%;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    text-align: left;
 }
 
-.today_date{
-    background-color: gray;
-    color: blue;
+.modalObjects {
+    background-color: white;
+    margin-top: 5rem;
+    display: flex;
+    width: 60%;
+    flex-flow: column;
+    justify-content: center;
+    padding: 10rem;
+}
+
+.close {
+    font-weight: bold;
+    border: none;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: 5rem;
+}
+
+.doneCancelButtons {
+    display: flex;
+    margin: 2rem;
+    justify-content: center;
 }

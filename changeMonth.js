@@ -41,7 +41,7 @@ var month = document.getElementById("month");
 var year = document.getElementById("year");
 
 var lastDay;
-var lastCell 
+var lastCell; 
 
 // BUTTONS
 
@@ -51,7 +51,6 @@ var prevMonth = document.getElementById("prev-month");
 // --------------ADD EVENT LISTENERS
 
 nextMonth.addEventListener("click", followingMonth);
-nextMonth.addEventListener("click", monthBeginning)
 prevMonth.addEventListener("click", previousMonth);
 
 month.innerHTML = monthsNames[currentMonth];
@@ -63,7 +62,6 @@ function monthBeginning(){
      
     let beginning = new Date(currentYear, currentMonth, 1);
     return beginning.getDay()
-        
 }
 
 function createMonth(month){
@@ -93,15 +91,12 @@ function followingMonth(){
 
     if(currentMonth!==11){
         currentMonth++;
-
     }
     else{
         currentMonth=0;
         currentYear++;
     }
-    
     printNewMonth();
-
 }
 
 function previousMonth(){
@@ -133,4 +128,13 @@ function printNewMonth(){
     
 
 }
+
+// FUNCTION UPDATED TIME
+
+function updateTime() {
+    var now = new Date();
+    document.getElementById("current_time").innerHTML = now;
+}
+updateTime();
+setInterval(updateTime, 1000);
 

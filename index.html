@@ -12,8 +12,48 @@
 
 <body>
     <div class="modal">
-        <div>Stuff inside Modal</div>
-        <button class="close">&times;</button>
+
+        <form class="modalObjects">
+            <h2>New Event</h2>
+            <div>
+                <label for="title">Title:</label> <input id="titleName" type="text" /></div>
+            <div><label>Initial Date:</label>
+                <input type="datetime-local" id="dateTime" /></div>
+            <div>
+                <input type="checkbox">End Date:</input>
+            </div>
+
+            <!--If checked, add new input field for End Date-->
+
+            <div>
+                </dive><input type="checkbox">Remind me when this event expires</input>
+            </div>
+
+            <div>
+                <label for="description">Description:</label><input id="description" class="desInput" />
+
+            </div>
+
+            <div>
+                <label for="typeEvent">Event Type:</label><select id="typeEvent">
+                    
+                    <option>Meeting</option>
+                    <option>Interview</option>
+                    <option>Sports</option>
+                    <option>Doctors Appointment</option>
+                    <option>Travel Schedule</option>
+                </select>
+            </div>
+
+            <div class="doneCancelButtons">
+                <button class="cancel" id="cancel-btn">Cancel</button>
+                <button class="create" id="create-btn">Create</button>
+            </div>
+        </form>
+        <button class="close" id="closeEvent">&times;</button>
+    </div>
+
+
     </div>
     <header>
         <h2 class="header-calendar">JS Calendar</h2>
@@ -25,21 +65,24 @@
         <div class="month">
             <div class="month-row">
                 <button class="prev-month" id="prev-month"></button>
-                <p class="month-name" id="month"></p>
-                <p class="year-number" id="year"></p>
+                <div class="timeMonthDiv">
+                    <p class="month-name" id="month"></p>
+                    <p class="year-number" id="year"></p>
+                    <span class="currentDate" id="current_time"></span>
+                </div>
                 <button class="next-month" id="next-month"></button>
             </div>
 
             <!-- Month Strip Item End-->
 
-            <div class="days-name">
-                <span>Sunday</span>
-                <span>Monday</span>
-                <span>Tuesday</span>
-                <span>Wednesday</span>
-                <span>Thursday</span>
-                <span>Friday</span>
-                <span>Saturday</span>
+            <div class="days-name-container">
+                <span class="name-day">Sunday</span>
+                <span class="name-day">Monday</span>
+                <span class="name-day">Tuesday</span>
+                <span class="name-day">Wednesday</span>
+                <span class="name-day">Thursday</span>
+                <span class="name-day">Friday</span>
+                <span class="name-day">Saturday</span>
             </div>
             <div class="days-grid" id="days">
                 
