@@ -15,6 +15,9 @@ var listMonths = [
 
 var date = new Date();
 
+//var changingMonth;
+var month = date.getMonth(); //Used for Month Name in the Heading
+
 //Last Day
 
 var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate(); // returns number of days of the month
@@ -75,26 +78,24 @@ function saveData(e) {
 //Name of the Month
 
 function nameOfMonth() {
-    var month = date.getMonth(); //Used for Month Name in the Heading
     document.querySelector(".month-name").innerHTML = listMonths[month];
-
+    let dayAll = document.querySelectorAll("#days-grid");
     let nextButton = document.getElementById("next");
 
     nextButton.addEventListener("click", () => {
         if (month < 11) {
             month++;
-
             document.querySelector(".month-name").innerHTML = listMonths[month];
+            //changingMonth = month;
+            //console.log(month);
             var updateDate = new Date();
+
             var dayOne = new Date(updateDate.getFullYear(), month).getDay();
+
             var dayLast = new Date(updateDate.getFullYear(), month + 1, 0).getDate();
 
             for (let i = 0; i < dayLast; i++) {
-                let dayAll = document.querySelectorAll(".days");
-
                 dayAll[i + dayOne].innerHTML = i + 1;
-
-                console.log(dayAll[i + dayOne]);
             }
         } else {
             month = -1;
@@ -106,8 +107,6 @@ function nameOfMonth() {
             var dayLast = new Date(updateDate.getFullYear(), month + 1, 0).getDate();
 
             for (i = 0; i < dayLast; i++) {
-                let dayAll = document.querySelectorAll(".days");
-
                 dayAll[i + dayOne].innerHTML = i + 1;
             }
         }
@@ -126,9 +125,7 @@ function nameOfMonth() {
             var dayLast = new Date(updateDate.getFullYear(), month + 1, 0).getDate();
 
             for (i = 0; i < dayLast; i++) {
-                let dayAll = document.querySelectorAll(".days");
-
-                dayAll[i + dayOne].innerHTML = i + 1;
+                dayAll[i - dayLast].innerHTML = i + 1;
             }
         } else {
             month = 12;
@@ -140,8 +137,6 @@ function nameOfMonth() {
             var dayLast = new Date(updateDate.getFullYear(), month + 1, 0).getDate();
 
             for (i = 0; i < dayLast; i++) {
-                let dayAll = document.querySelectorAll(".days");
-
                 dayAll[i + dayOne].innerHTML = i + 1;
             }
         }
@@ -155,7 +150,7 @@ nameOfMonth();
 
 function addDays() {
     for (day = 0; day < lastDay; day++) {
-        let days = document.querySelectorAll(".days");
+        let days = document.querySelectorAll("#days");
 
         days[day + firstDay].innerHTML = day + 1;
     }
@@ -171,3 +166,5 @@ function updateTime() {
 }
 updateTime();
 setInterval(updateTime, 1000);
+
+//date.setMonth(changingMonth);
