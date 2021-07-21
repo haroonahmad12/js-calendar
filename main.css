@@ -125,3 +125,14 @@ button{
     margin: 2rem;
     justify-content: center;
 }
+
+/* -----------COLORS */
+
+.today_date{
+    background-color: blue;
+    color: white;
+}
+
+.modalObjects {
+    background-color: white;
+}
