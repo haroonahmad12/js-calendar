@@ -13,19 +13,19 @@ var listMonths = [
     "December",
 ];
 
-let date = new Date();
+var date = new Date();
 
 //Last Day
 
-let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate(); // returns number of days of the month
+var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate(); // returns number of days of the month
 
 //First Day
-let firstDay = new Date(date.getFullYear(), date.getMonth()).getDay();
+var firstDay = new Date(date.getFullYear(), date.getMonth()).getDay();
 
-let daysName = document.querySelectorAll(".name-day");
+var daysName = document.querySelectorAll(".name-day");
 
 // Add Event Button
-let newEventAdder = document.getElementById("newEvent");
+var newEventAdder = document.getElementById("newEvent");
 
 newEventAdder.addEventListener("click", showModal);
 
@@ -75,29 +75,76 @@ function saveData(e) {
 //Name of the Month
 
 function nameOfMonth() {
-    let month = date.getMonth(); //Used for Month Name in the Heading
+    var month = date.getMonth(); //Used for Month Name in the Heading
     document.querySelector(".month-name").innerHTML = listMonths[month];
 
     let nextButton = document.getElementById("next");
 
     nextButton.addEventListener("click", () => {
-        if (month !== 11) {
+        if (month < 11) {
             month++;
+
+            document.querySelector(".month-name").innerHTML = listMonths[month];
+            var updateDate = new Date();
+            var dayOne = new Date(updateDate.getFullYear(), month).getDay();
+            var dayLast = new Date(updateDate.getFullYear(), month + 1, 0).getDate();
+
+            for (let i = 0; i < dayLast; i++) {
+                let dayAll = document.querySelectorAll(".days");
+
+                dayAll[i + dayOne].innerHTML = i + 1;
+
+                console.log(dayAll[i + dayOne]);
+            }
+        } else {
+            month = -1;
+            month++;
+            document.querySelector(".month-name").innerHTML = listMonths[month];
+
+            var updateDate = new Date();
+            var dayOne = new Date(updateDate.getFullYear(), month).getDay();
+            var dayLast = new Date(updateDate.getFullYear(), month + 1, 0).getDate();
+
+            for (i = 0; i < dayLast; i++) {
+                let dayAll = document.querySelectorAll(".days");
+
+                dayAll[i + dayOne].innerHTML = i + 1;
+            }
+        }
+    });
+    let prevButton = document.getElementById("previous");
+
+    prevButton.addEventListener("click", () => {
+        if (month >= 1) {
+            month--;
+
+            document.querySelector(".month-name").innerHTML = listMonths[month];
             date.setMonth(month);
 
-            console.log(date);
-            document.querySelector(".month-name").innerHTML = listMonths[month];
-        }
+            var updateDate = new Date();
+            var dayOne = new Date(updateDate.getFullYear(), month).getDay();
+            var dayLast = new Date(updateDate.getFullYear(), month + 1, 0).getDate();
 
-        let prevButton = document.getElementById("previous");
+            for (i = 0; i < dayLast; i++) {
+                let dayAll = document.querySelectorAll(".days");
 
-        prevButton.addEventListener("click", () => {
-            if (month < 11 && month > 0) {
-                month--;
-                document.querySelector(".month-name").innerHTML = listMonths[month];
-                console.log(month);
+                dayAll[i + dayOne].innerHTML = i + 1;
             }
-        });
+        } else {
+            month = 12;
+            month--;
+
+            document.querySelector(".month-name").innerHTML = listMonths[month];
+            var updateDate = new Date();
+            var dayOne = new Date(updateDate.getFullYear(), month).getDay();
+            var dayLast = new Date(updateDate.getFullYear(), month + 1, 0).getDate();
+
+            for (i = 0; i < dayLast; i++) {
+                let dayAll = document.querySelectorAll(".days");
+
+                dayAll[i + dayOne].innerHTML = i + 1;
+            }
+        }
     });
 }
 nameOfMonth();
