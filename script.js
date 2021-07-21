@@ -79,7 +79,7 @@ function saveData(e) {
 
 function nameOfMonth() {
     document.querySelector(".month-name").innerHTML = listMonths[month];
-    let dayAll = document.querySelectorAll("#days-grid");
+    let dayAll = document.querySelectorAll(".days");
     let nextButton = document.getElementById("next");
 
     nextButton.addEventListener("click", () => {
@@ -125,7 +125,7 @@ function nameOfMonth() {
             var dayLast = new Date(updateDate.getFullYear(), month + 1, 0).getDate();
 
             for (i = 0; i < dayLast; i++) {
-                dayAll[i - dayLast].innerHTML = i + 1;
+                dayAll[i + dayOne].innerHTML = i + dayOne;
             }
         } else {
             month = 12;
@@ -150,9 +150,9 @@ nameOfMonth();
 
 function addDays() {
     for (day = 0; day < lastDay; day++) {
-        let days = document.querySelectorAll("#days");
+        let days = document.querySelectorAll(".days");
 
-        days[day + firstDay].innerHTML = day + 1;
+        days[day + firstDay].textContent = day + 1;
     }
 }
 addDays();
