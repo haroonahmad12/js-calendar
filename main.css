@@ -8,6 +8,10 @@ body {
     margin: auto;
     font-family: "Courier New", Courier, monospace;
 }
+button{
+    width: 2rem;
+    height: 2rem;
+}
 
 .header-calendar {
     flex-basis: 80%;
@@ -28,6 +32,7 @@ body {
 .days-name {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 6;
     text-align: center;
     font-weight: bold;
 }
@@ -67,4 +72,9 @@ body {
     text-align: center;
     width: 80%;
     height: 100%;
+}
+
+.today_date{
+    background-color: gray;
+    color: blue;
 }

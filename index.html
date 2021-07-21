@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Calender</title>
     <link rel="stylesheet" href="main.css" />
+    <script src="changeMonth.js" defer></script>
 </head>
 
 <body>
@@ -23,10 +24,10 @@
         <!-- Month Strip Item-->
         <div class="month">
             <div class="month-row">
-                <button class="prev-month"><</button>
-                <span class="month-name">July</span>
-
-                <button class="next-month">></button>
+                <button class="prev-month" id="prev-month"></button>
+                <p class="month-name" id="month"></p>
+                <p class="year-number" id="year"></p>
+                <button class="next-month" id="next-month"></button>
             </div>
 
             <!-- Month Strip Item End-->
@@ -40,42 +41,8 @@
                 <span>Friday</span>
                 <span>Saturday</span>
             </div>
-            <div class="days-grid">
-                <span class="days"></span>
-                <span class="days"></span>
-                <span class="days"></span>
-                <span class="days"></span>
-                <span class="days">1</span>
-                <span class="days">2</span>
-                <span class="days">3</span>
-                <span class="days">4</span>
-                <span class="days">5</span>
-                <span class="days">6</span>
-                <span class="days">7</span>
-                <span class="days">8</span>
-                <span class="days">9</span>
-                <span class="days">10</span>
-                <span class="days">11</span>
-                <span class="days">12</span>
-                <span class="days">13</span>
-                <span class="days">14</span>
-                <span class="days">15</span>
-                <span class="days">16</span>
-                <span class="days">17</span>
-                <span class="days">18</span>
-                <span class="days">19</span>
-                <span class="days">20</span>
-                <span class="days">21</span>
-                <span class="days">22</span>
-                <span class="days">23</span>
-                <span class="days">24</span>
-                <span class="days">25</span>
-                <span class="days">26</span>
-                <span class="days">27</span>
-                <span class="days">28</span>
-                <span class="days">29</span>
-                <span class="days">30</span>
-                <span class="days">31</span>
+            <div class="days-grid" id="days">
+                
             </div>
         </div>
     </main>
