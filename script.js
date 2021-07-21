@@ -15,11 +15,14 @@ var listMonths = [
 
 let date = new Date();
 
-let month = date.getMonth(); //Used for Month Name in the Heading
-
 //Last Day
 
 let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate(); // returns number of days of the month
+
+//First Day
+let firstDay = new Date(date.getFullYear(), date.getMonth()).getDay();
+
+let daysName = document.querySelectorAll(".name-day");
 
 // Add Event Button
 let newEventAdder = document.getElementById("newEvent");
@@ -69,18 +72,47 @@ function saveData(e) {
     document.querySelector(".modal").style.display = "none";
 }
 
-// Add days to the Grid
+//Name of the Month
 
-function addDays() {
+function nameOfMonth() {
+    let month = date.getMonth(); //Used for Month Name in the Heading
     document.querySelector(".month-name").innerHTML = listMonths[month];
 
-    for (day = 1; day <= lastDay; day++) {
+    let nextButton = document.getElementById("next");
+
+    nextButton.addEventListener("click", () => {
+        if (month !== 11) {
+            month++;
+            date.setMonth(month);
+
+            console.log(date);
+            document.querySelector(".month-name").innerHTML = listMonths[month];
+        }
+
+        let prevButton = document.getElementById("previous");
+
+        prevButton.addEventListener("click", () => {
+            if (month < 11 && month > 0) {
+                month--;
+                document.querySelector(".month-name").innerHTML = listMonths[month];
+                console.log(month);
+            }
+        });
+    });
+}
+nameOfMonth();
+
+//next and previous month Buttons
+
+// Add days to the Grid and Arrange days in the grid
+
+function addDays() {
+    for (day = 0; day < lastDay; day++) {
         let days = document.querySelectorAll(".days");
 
-        days[day].innerHTML = [day];
+        days[day + firstDay].innerHTML = day + 1;
     }
 }
-
 addDays();
 
 // Update time every Second
@@ -92,12 +124,3 @@ function updateTime() {
 }
 updateTime();
 setInterval(updateTime, 1000);
-
-//Arranging the Days
-
-function arrangeDays() {
-    let daysName = document.querySelectorAll(".name-day");
-    console.log(daysName);
-}
-
-arrangeDays();
