@@ -62,32 +62,32 @@
 
     <main class="main-window">
         <!-- Month Strip Item-->
-        <div class="month">
+        <div class="calendar_container">
             <div class="month-row">
-                
-                <span class="currentDate" id="current_time"></span>
-                <button class="prev-month" id="prev-month"></button>
-                <div class="timeMonthDiv">
-                    <p class="month-name" id="month"></p>
-                    <p class="year-number" id="year"></p>
-                    
+                <span class="current_time" id="current_time"></span>
+                <div class="buttons_container">
+                <button class="button_month" id="prev-month"><img src="https://cdn.icon-icons.com/icons2/1993/PNG/512/arrow_arrows_back_direction_left_navigation_right_icon_123236.png" class="prev_arrow arrow_img"></button>
+                    <div class="month_year_container">
+                        <p class="month" id="month"></p>
+                        <p class="year" id="year"></p>
+                    </div>
+                <button class="button_month" id="next-month"><img src="https://cdn.icon-icons.com/icons2/1993/PNG/512/arrow_arrows_back_direction_left_navigation_right_icon_123236.png" class="next_arrow arrow_img"></button>
                 </div>
-                <button class="next-month" id="next-month"></button>
             </div>
 
             <!-- Month Strip Item End-->
-
-            <div class="days-name-container">
-                <span class="name-day">Sunday</span>
-                <span class="name-day">Monday</span>
-                <span class="name-day">Tuesday</span>
-                <span class="name-day">Wednesday</span>
-                <span class="name-day">Thursday</span>
-                <span class="name-day">Friday</span>
-                <span class="name-day">Saturday</span>
-            </div>
-            <div class="days-grid" id="days">
-                
+            <div class="dates_container">
+                <div class="days-name-container">
+                    <span class="name-day">Sunday</span>
+                    <span class="name-day">Monday</span>
+                    <span class="name-day">Tuesday</span>
+                    <span class="name-day">Wednesday</span>
+                    <span class="name-day">Thursday</span>
+                    <span class="name-day">Friday</span>
+                    <span class="name-day">Saturday</span>
+                </div>
+                <div class="days-grid" id="days">
+                </div>
             </div>
         </div>
     </main>

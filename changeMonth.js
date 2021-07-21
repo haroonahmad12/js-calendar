@@ -17,16 +17,6 @@ var monthsNames = [
     "December"
 ]
 
-var daysNames = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday"
-]
-
 // CURRENT DATE
 
 var currentDate = new Date();
