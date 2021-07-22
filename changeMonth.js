@@ -1,6 +1,5 @@
 // --------------VARIABLE DECLARATIONS
 
-
 // MONTHS AND DAYS ARRAYS
 var monthsNames = [
     "January",
@@ -14,8 +13,8 @@ var monthsNames = [
     "September",
     "October",
     "November",
-    "December"
-]
+    "December",
+];
 
 // CURRENT DATE
 
@@ -31,7 +30,7 @@ var month = document.getElementById("month");
 var year = document.getElementById("year");
 
 var lastDay;
-var lastCell; 
+var lastCell;
 
 // BUTTONS
 
@@ -48,78 +47,71 @@ year.innerHTML = currentYear.toString();
 
 printNewMonth(currentMonth);
 
-function monthBeginning(){
-     
+function monthBeginning() {
     let beginning = new Date(currentYear, currentMonth, 1);
-    return beginning.getDay()
+    return beginning.getDay();
 }
 
-function createMonth(month){
-        
-        for(let j = monthBeginning(currentMonth); j>0; j--){
-            days.innerHTML += `<div class='every_date previous_month_date'>${(lastDay-(j-1))}</div>`;
-        }
+function createMonth(month) {
+    for (let j = monthBeginning(currentMonth); j > 0; j--) {
+        days.innerHTML += `<div class='every_date previous_month_date'>${
+      lastDay - (j - 1)
+    }</div>`;
+    }
 
-        for(let i=1; i<=42;i++){
-            
-            if(i===currentDay && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()){
+    for (let i = 1; i <= 42; i++) {
+        if (
+            i === currentDay &&
+            currentMonth === new Date().getMonth() &&
+            currentYear === new Date().getFullYear()
+        ) {
             days.innerHTML += `<div class='every_date today_date' id='today_date'  data-date='every_date'>
                                         <p class="day_number">${i}</p>
                                         <button class="plus_button" data-button='plus-button'>+</button>
                                 </div>`;
-            }
-            else if(i<=lastDay){
-            days.innerHTML += `<div class='every_date current_month_date' data-date='every_date'>
+        } else if (i <= lastDay) {
+            days.innerHTML += `<div class='every_date current_month_date' data-date='every_date' id ="${i}">
                                         <p class="day_number">${i}</p>
                                         <button class="plus_button" data-button='plus-button'>+</button>
                                 </div>`;
-            }
-            else if(i <=lastDay+1){
-                console.log(lastCell);
-                for(let j = 1; j<= lastCell; j++)
+        } else if (i <= lastDay + 1) {
+            console.log(lastCell);
+            for (let j = 1; j <= lastCell; j++)
                 days.innerHTML += `<div class='every_date next_month_date'>${j}</div>`;
-             }
         }
+    }
 }
 
-function followingMonth(){
-
-    if(currentMonth!==11){
+function followingMonth() {
+    if (currentMonth !== 11) {
         currentMonth++;
-    }
-    else{
-        currentMonth=0;
+    } else {
+        currentMonth = 0;
         currentYear++;
     }
     printNewMonth();
 }
 
-function previousMonth(){
-
-    if(currentMonth!==0){
+function previousMonth() {
+    if (currentMonth !== 0) {
         currentMonth--;
-    }
-    else{
-        currentMonth=11;
+    } else {
+        currentMonth = 11;
         currentYear--;
     }
     printNewMonth();
 }
 
-function printNewMonth(){
-
-    currentDate.setFullYear(currentYear,currentMonth,currentDay);
+function printNewMonth() {
+    currentDate.setFullYear(currentYear, currentMonth, currentDay);
     month.innerHTML = monthsNames[currentMonth];
     year.innerHTML = currentYear.toString();
 
-    lastDay = new Date(currentYear, currentMonth+1, 0).getDate();
-    
-    lastCell = 42 - (lastDay + monthBeginning(currentMonth))
-    days.innerHTML="";
-    createMonth(currentMonth);
-    
-    
+    lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
 
+    lastCell = 42 - (lastDay + monthBeginning(currentMonth));
+    days.innerHTML = "";
+    createMonth(currentMonth);
 }
 
 // FUNCTION UPDATED TIME
@@ -130,4 +122,3 @@ function updateTime() {
 }
 updateTime();
 setInterval(updateTime, 1000);
-

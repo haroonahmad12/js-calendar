@@ -10,6 +10,7 @@
     <script src="changeMonth.js" defer></script>
     <script src="modal.js" defer></script>
     <script src="cell_day.js" defer></script>
+    <script src="storage.js" defer></script>
 </head>
 
 <body>
@@ -27,28 +28,28 @@
                 <button id="new_event_modal" class="add_event">Add Event</button>
             </div>
         </div>
-        <div class="modal_objects is_hidden" id="modal_form_container"> 
+        <div class="modal_objects is_hidden" id="modal_form_container">
             <button class="close" id="close_modal2">&times;</button>
             <form>
                 <h2>New Event</h2>
-                    <div>
-                        <label for="title">Title:</label> 
-                        <input id="title" type="text"></input>
-                    </div>
-            
-                    <label for="date_time">Initial Date:</label>
-                    <input type="datetime-local" id="date_time"><br>
-                    
-                    <input type="checkbox" id="end_date_check">
-                    <label for="end_date_check">End Date</label><br>
-            
-            <!--If checked, add new input field for End Date-->
+                <div>
+                    <label for="title">Title:</label>
+                    <input id="title" type="text"></input>
+                </div>
 
-                    <input type="checkbox" id="reminder_check">
-                    <label for="reminder_check">Remind me when this event expires</label><br>
-                    <label for="description">Description:</label><br>
-                    <textarea rows="6" cols="40" maxlength="500" id="description"></textarea><br>
-                    <label for="typeEvent">Event Type:</label><select id="typeEvent">
+                <label for="date_time">Initial Date:</label>
+                <input type="datetime-local" id="date_time"><br>
+
+                <input type="checkbox" id="end_date_check">
+                <label for="end_date_check">End Date</label><br>
+
+                <!--If checked, add new input field for End Date-->
+
+                <input type="checkbox" id="reminder_check">
+                <label for="reminder_check">Remind me when this event expires</label><br>
+                <label for="description">Description:</label><br>
+                <textarea rows="6" cols="40" maxlength="500" id="description"></textarea><br>
+                <label for="typeEvent">Event Type:</label><select id="typeEvent">
                         <option>Meeting</option>
                         <option>Interview</option>
                         <option>Sports</option>
@@ -76,12 +77,12 @@
             <div class="month-row">
                 <span class="current_time" id="current_time"></span>
                 <div class="buttons_container">
-                <button class="button_month" id="prev-month"><img src="https://cdn.icon-icons.com/icons2/1993/PNG/512/arrow_arrows_back_direction_left_navigation_right_icon_123236.png" class="prev_arrow arrow_img"></button>
+                    <button class="button_month" id="prev-month"><img src="https://cdn.icon-icons.com/icons2/1993/PNG/512/arrow_arrows_back_direction_left_navigation_right_icon_123236.png" class="prev_arrow arrow_img"></button>
                     <div class="month_year_container">
                         <p class="month" id="month"></p>
                         <p class="year" id="year"></p>
                     </div>
-                <button class="button_month" id="next-month"><img src="https://cdn.icon-icons.com/icons2/1993/PNG/512/arrow_arrows_back_direction_left_navigation_right_icon_123236.png" class="next_arrow arrow_img"></button>
+                    <button class="button_month" id="next-month"><img src="https://cdn.icon-icons.com/icons2/1993/PNG/512/arrow_arrows_back_direction_left_navigation_right_icon_123236.png" class="next_arrow arrow_img"></button>
                 </div>
             </div>
 
