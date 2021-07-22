@@ -12,8 +12,11 @@
 
 <body>
     <div class="modal">
-
-        <form class="modalObjects">
+        <div class="summary modal_objects">
+            <p>No events has been added.</p>
+            <button id="new_event_modal" class="add_event">Add Event</button>
+        </div>
+        <form class="modal_objects">
             <h2>New Event</h2>
             <div>
                 <label for="title">Title:</label> <input id="titleName" type="text" /></div>
@@ -31,9 +34,7 @@
 
             <div>
                 <label for="description">Description:</label><input id="description" class="desInput" />
-
             </div>
-
             <div>
                 <label for="typeEvent">Event Type:</label><select id="typeEvent">
                     

@@ -10,7 +10,6 @@ header {
 }
 
 body {
-    max-width: 1200px;
     margin: auto;
 }
 
@@ -43,8 +42,9 @@ button{
 }
 
 .calendar_container {
-    width: 90%;
+    width: 100%;
     align-content: center;
+    max-width: 100rem;
 }
 
 .dates_container{
@@ -73,7 +73,7 @@ button{
 .month-row {
     display: flex;
     flex-direction: column;
-    background-color: gray;
+    border:1rem solid rgb(15, 215, 241);
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2rem;
@@ -104,11 +104,29 @@ button{
     align-items: center;
     border-radius: 1rem;
     border: 1px solid black;
+    min-height: 3rem;
+    min-width: 3rem;
+    max-height: 10rem;
+    height: 30vh;
+}
+
+.every_date:hover{
+    background-color: rgb(116, 217, 248);
+}
+
+.today_date{
+    background-color: rgba(45, 6, 218, 0.76);
+    color: white;
+    font-size: 3rem;
+}
+.today_date:hover {
+    opacity: 50%;
+
 }
 
 .previous_month_date, .next_month_date {
     background-color: lightgray;
-    opacity: 40%;
+    opacity: 30%;
 }
 /* -------------CALENDAR BUTTONS */
 .AddEvent {
@@ -121,9 +139,12 @@ button{
     background-color: rgb(84, 173, 252);
 }
 .button_month{
+    border:none;
     border-radius: 10%;
+    max-width: 8rem;
     color: black;
-    background-color: blueviolet;
+    background-color: rgb(84, 173, 252);
+    margin: 1rem;
 }
 
 .prev_arrow{
@@ -132,6 +153,7 @@ button{
 
 .arrow_img{
     width: 100%;
+    filter: invert(100%);
 }
 
 
@@ -139,7 +161,7 @@ button{
 /* ----------------------MODAL */
 
 .modal {
-    display: none;
+    /* display: none; */
     z-index: 1;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.4);
@@ -152,14 +174,15 @@ button{
     text-align: left;
 }
 
-.modalObjects {
+.modal_objects {
     background-color: white;
-    margin-top: 5rem;
     display: flex;
-    width: 60%;
+    width: 30%;
     flex-flow: column;
     justify-content: center;
     padding: 10rem;
+    margin: auto;
+    margin-top: 10%;
 }
 
 .close {
@@ -174,4 +197,10 @@ button{
     display: flex;
     margin: 2rem;
     justify-content: center;
+}
+
+/* IS HIDDEN CLASS */
+
+.is_hidden{
+    display: none;
 }

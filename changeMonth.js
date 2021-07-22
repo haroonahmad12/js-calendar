@@ -62,7 +62,7 @@ function createMonth(month){
 
         for(let i=1; i<=42;i++){
             
-            if(i===currentDay && currentMonth === new Date().getMonth()){
+            if(i===currentDay && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear){
             days.innerHTML += `<div class='every_date today_date' id='today_date'>${i}<div>`;
             }
             else if(i<=lastDay){
