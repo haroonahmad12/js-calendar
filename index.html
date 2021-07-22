@@ -6,54 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Calender</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./CSS/main.css" />
 </head>
 
-<body>
-    <div class="modal">
+<div class="modal">
 
-        <form class="modalObjects">
-            <h2>New Event</h2>
-            <div>
-                <label for="title">Title:</label> <input id="titleName" type="text" /></div>
-            <div><label>Initial Date:</label>
-                <input type="datetime-local" id="dateTime" /></div>
-            <div>
-                <input type="checkbox">End Date:</input>
-            </div>
-
-            <!--If checked, add new input field for End Date-->
-
-            <div>
-                </dive><input type="checkbox">Remind me when this event expires</input>
-            </div>
-
-            <div>
-                <label for="description">Description:</label><input id="description" class="desInput" />
-
-            </div>
-
-            <div>
-                <label for="typeEvent">Event Type:</label><select id="typeEvent">
-                    
-                    <option>Meeting</option>
-                    <option>Interview</option>
-                    <option>Sports</option>
-                    <option>Doctors Appointment</option>
-                    <option>Travel Schedule</option>
-                </select>
-            </div>
-
-            <div class="doneCancelButtons">
-                <button class="cancel" id="cancel-btn">Cancel</button>
-                <button class="create" id="create-btn">Create</button>
-            </div>
-        </form>
+    <form class="modalObjects" id="addEventForm">
         <button class="close" id="closeEvent">&times;</button>
-    </div>
+        <h2>New Event</h2>
+        <div>
+            <label for="title">Title:</label> <input id="titleName" type="text" /></div>
+        <div><label>Initial Date:</label>
+            <input type="datetime-local" id="date" /></div>
+        <div>
+            <input type="checkbox">End Date:</input>
+        </div>
 
+        <!--If checked, add new input field for End Date-->
 
-    </div>
+        <div>
+            </dive><input type="checkbox">Remind me when this event expires</input>
+        </div>
+
+        <div>
+            <label for="description">Description:</label><input id="description" class="desInput" />
+
+        </div>
+
+        <div>
+            <label for="typeEvent">Event Type:</label><select id="typeEvent">
+                
+                <option>Meeting</option>
+                <option>Interview</option>
+                <option>Sports</option>
+                <option>Doctors Appointment</option>
+                <option>Travel Schedule</option>
+            </select>
+        </div>
+
+        <div class="doneCancelButtons">
+            <button class="cancel" id="cancel-btn">Cancel</button>
+            <button class="create" id="create-btn">Create</button>
+        </div>
+    </form>
+
+</div>
+
+<body>
     <header>
         <h2 class="header-calendar">JS Calendar</h2>
         <button id="newEvent" class="AddEvent">Add Event</button>
@@ -83,7 +82,6 @@
                 <span class="name-day">Saturday</span>
             </div>
             <div class="days-grid" id="days-grid">
-
                 <div class="days"></div>
                 <div class="days"></div>
                 <div class="days"></div>
@@ -124,12 +122,14 @@
                 <div class="days"></div>
                 <div class="days"></div>
                 <div class="days"></div>
-
-
+                <div class="days"></div>
+                <div class="days"></div>
             </div>
         </div>
     </main>
 </body>
-<script src="./script.js"></script>
+<script src="./JS/script.js"></script>
+<script src="JS/modal.js"></script>
+<script src="JS/storage.js"></script>
 
 </html>
