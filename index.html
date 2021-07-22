@@ -11,6 +11,7 @@
     <script src="modal.js" defer></script>
     <script src="cell_day.js" defer></script>
     <script src="storage.js" defer></script>
+
 </head>
 
 <body>
@@ -30,24 +31,38 @@
         </div>
         <div class="modal_objects is_hidden" id="modal_form_container">
             <button class="close" id="close_modal2">&times;</button>
-            <form>
+            <form id="add-event-form">
                 <h2>New Event</h2>
                 <div>
-                    <label for="title">Title:</label>
-                    <input id="title" type="text"></input>
+                    <label for="title">Title:</label> <input id="titleName" type="text" required maxlength="60" /></div>
+                <div><label>Initial Date:</label>
+                    <input type="datetime-local" id="dateTime" /></div>
+
+
+                <div>
+                    <label for="end-date-check">
+                        <input type="checkbox" name="end-date-check" id="end-date-check" />
+                        End date
+                      </label>
+                    <label for="end" class="hide" id="endDateInput">
+                        <input type="date" name="end" id="end-date" />
+                        <input type="time" name="end" id="end-time" />
+                      </label>
                 </div>
+                <div>
 
-                <label for="date_time">Initial Date:</label>
-                <input type="datetime-local" id="date_time"><br>
-
-                <input type="checkbox" id="end_date_check">
-                <label for="end_date_check">End Date</label><br>
-
-                <!--If checked, add new input field for End Date-->
-
-                <input type="checkbox" id="reminder_check">
-                <label for="reminder_check">Remind me when this event expires</label><br>
-                <label for="description">Description:</label><br>
+                    <input type="checkbox" id="reminder-check">Remind me when this event expires</input>
+                    <br>
+                    <label for="reminder-select" id="label-reminder-select" class="hide">Remind Interval
+                    <select name="reminder-select" id="reminder-select">
+                      <option value="5">5 minutes</option>
+                      <option value="10">10 minutes</option>
+                      <option value="15">15 minutes</option>
+                      <option value="30">30 minutes</option>
+                      <option value="60">1 hour</option>
+                    </select>
+                  </label>
+                </div><label for="description">Description:</label><br>
                 <textarea rows="6" cols="40" maxlength="500" id="description"></textarea><br>
                 <label for="typeEvent">Event Type:</label><select id="typeEvent">
                         <option>Meeting</option>
