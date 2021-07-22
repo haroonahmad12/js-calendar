@@ -10,7 +10,6 @@ header {
 }
 
 body {
-    max-width: 1200px;
     margin: auto;
 }
 
@@ -26,15 +25,6 @@ button{
     margin-left: 23rem;
 }
 
-.buttons_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-
 .main-window {
     display: flex;
     justify-content: center;
@@ -43,8 +33,9 @@ button{
 }
 
 .calendar_container {
-    width: 90%;
+    width: 100%;
     align-content: center;
+    max-width: 100rem;
 }
 
 .dates_container{
@@ -73,7 +64,7 @@ button{
 .month-row {
     display: flex;
     flex-direction: column;
-    background-color: gray;
+    border:1rem solid rgb(15, 215, 241);
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2rem;
@@ -97,33 +88,30 @@ button{
     gap: 0.2rem;
 }
 
-.every_date{
-    font-size:  1.3rem;
+/* -------------CALENDAR BUTTONS */
+.buttons_container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    border-radius: 1rem;
-    border: 1px solid black;
+    width: 100%;
 }
 
-.previous_month_date, .next_month_date {
-    background-color: lightgray;
-    opacity: 40%;
-}
-/* -------------CALENDAR BUTTONS */
-.AddEvent {
-    width: 10rem;
+.add_event {
+    width: 5rem;
     height: 2rem;
-    margin-left: 10rem;
-    margin-right: 2rem;
+    margin: 2rem;
     border-radius: 1rem;
     border: none;
     background-color: rgb(84, 173, 252);
 }
 .button_month{
+    border:none;
     border-radius: 10%;
+    max-width: 8rem;
     color: black;
-    background-color: blueviolet;
+    background-color: rgb(84, 173, 252);
+    margin: 1rem;
 }
 
 .prev_arrow{
@@ -132,14 +120,72 @@ button{
 
 .arrow_img{
     width: 100%;
+    filter: invert(100%);
+}
+/* ----------------EVERY DATE CELL */
+.every_date{
+    font-size:  1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    border: 1px solid black;
+    min-height: 3rem;
+    min-width: 3rem;
+    max-height: 10rem;
+    height: 30vh;
+    position: relative;
 }
 
+.every_date:hover > .plus_button{
+    display:block;
+}
 
+.every_date:hover{
+    background-color: rgb(116, 217, 248);
+}
+
+.today_date{
+    background-color: rgba(45, 6, 218, 0.76);
+    color: white;
+    font-size: 3rem;
+}
+.today_date:hover {
+    opacity: 50%;
+
+}
+
+.previous_month_date, .next_month_date {
+    background-color: lightgray;
+    opacity: 30%;
+}
+
+.day_button_container{
+    position: relative;
+    width: 100%;
+}
+
+.plus_button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0.3rem;
+    border-radius: 40%;
+    display: none;
+}
+
+.day_number{
+    text-align: center;
+}
+
+.today_date .day_number{
+    position: absolute;
+    margin: auto;
+}
 
 /* ----------------------MODAL */
 
 .modal {
-    display: none;
     z-index: 1;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.4);
@@ -152,22 +198,40 @@ button{
     text-align: left;
 }
 
-.modalObjects {
+.modal_objects {
     background-color: white;
-    margin-top: 5rem;
-    display: flex;
-    width: 60%;
+    width: 30%;
     flex-flow: column;
     justify-content: center;
     padding: 10rem;
+    margin: auto;
+    margin-top: 10%;
 }
+.modal_summary{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    width: 30%;
+    margin: auto;
+    margin-top: 10%;
+}
+.day_events{
+    margin: 5rem;
+}
+
+.close_add_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 
 .close {
     font-weight: bold;
     border: none;
     background-color: white;
     border-radius: 50%;
-    margin-top: 5rem;
 }
 
 .doneCancelButtons {
@@ -176,13 +240,8 @@ button{
     justify-content: center;
 }
 
-/* -----------COLORS */
+    /* IS HIDDEN CLASS */
 
-.today_date{
-    background-color: blue;
-    color: white;
-}
-
-.modalObjects {
-    background-color: white;
+.is_hidden{
+    display: none;
 }

@@ -57,22 +57,27 @@ function monthBeginning(){
 function createMonth(month){
         
         for(let j = monthBeginning(currentMonth); j>0; j--){
-            days.innerHTML += `<div class='every_date previous_month_date' id='previous_month_date'>${(lastDay-(j-1))}<div>`;
+            days.innerHTML += `<div class='every_date previous_month_date'>${(lastDay-(j-1))}</div>`;
         }
 
         for(let i=1; i<=42;i++){
             
-            if(i===currentDay && currentMonth === new Date().getMonth()){
-            days.innerHTML += `<div class='every_date today_date' id='today_date'>${i}<div>`;
+            if(i===currentDay && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()){
+            days.innerHTML += `<div class='every_date today_date' id='today_date'  data-date='every_date'>
+                                        <p class="day_number">${i}</p>
+                                        <button class="plus_button" data-button='plus-button'>+</button>
+                                </div>`;
             }
             else if(i<=lastDay){
-            days.innerHTML += `<div class='every_date' id='every_date'>${i}<div>`;
+            days.innerHTML += `<div class='every_date current_month_date' data-date='every_date'>
+                                        <p class="day_number">${i}</p>
+                                        <button class="plus_button" data-button='plus-button'>+</button>
+                                </div>`;
             }
-            
             else if(i <=lastDay+1){
                 console.log(lastCell);
                 for(let j = 1; j<= lastCell; j++)
-                days.innerHTML += `<div class='every_date next_month_date' id='every_date'>${j}<div>`;
+                days.innerHTML += `<div class='every_date next_month_date'>${j}</div>`;
              }
         }
 }
@@ -93,13 +98,11 @@ function previousMonth(){
 
     if(currentMonth!==0){
         currentMonth--;
-
     }
     else{
         currentMonth=11;
         currentYear--;
     }
-
     printNewMonth();
 }
 
