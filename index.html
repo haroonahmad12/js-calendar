@@ -8,57 +8,66 @@
     <title>JS Calender</title>
     <link rel="stylesheet" href="main.css" />
     <script src="changeMonth.js" defer></script>
+    <script src="modal.js" defer></script>
+    <script src="cell_day.js" defer></script>
 </head>
 
 <body>
-    <div class="modal">
-        <div class="summary modal_objects">
-            <p>No events has been added.</p>
-            <button id="new_event_modal" class="add_event">Add Event</button>
-        </div>
-        <form class="modal_objects">
-            <h2>New Event</h2>
-            <div>
-                <label for="title">Title:</label> <input id="titleName" type="text" /></div>
-            <div><label>Initial Date:</label>
-                <input type="datetime-local" id="dateTime" /></div>
-            <div>
-                <input type="checkbox">End Date:</input>
+    <div class="modal is_hidden" id="modal">
+        <div class="modal_summary is_hidden" id="summary_events">
+            <div class="day_events" id="day_events">
+                <h3>Today Events</h3>
+                <p id="no_events">No events has been added.</p>
+                <p>evento 1</p>
+                <p>evento 2</p>
+                <p>evento 3</p>
             </div>
-
+            <div class="close_add_container" id="close_add_container">
+                <button class="close" id="close_modal">&times;</button>
+                <button id="new_event_modal" class="add_event">Add Event</button>
+            </div>
+        </div>
+        <div class="modal_objects is_hidden" id="modal_form_container"> 
+            <button class="close" id="close_modal2">&times;</button>
+            <form>
+                <h2>New Event</h2>
+                    <div>
+                        <label for="title">Title:</label> 
+                        <input id="title" type="text"></input>
+                    </div>
+            
+                    <label for="date_time">Initial Date:</label>
+                    <input type="datetime-local" id="date_time"><br>
+                    
+                    <input type="checkbox" id="end_date_check">
+                    <label for="end_date_check">End Date</label><br>
+            
             <!--If checked, add new input field for End Date-->
 
-            <div>
-                </dive><input type="checkbox">Remind me when this event expires</input>
-            </div>
-
-            <div>
-                <label for="description">Description:</label><input id="description" class="desInput" />
-            </div>
-            <div>
-                <label for="typeEvent">Event Type:</label><select id="typeEvent">
-                    
-                    <option>Meeting</option>
-                    <option>Interview</option>
-                    <option>Sports</option>
-                    <option>Doctors Appointment</option>
-                    <option>Travel Schedule</option>
-                </select>
-            </div>
-
-            <div class="doneCancelButtons">
-                <button class="cancel" id="cancel-btn">Cancel</button>
-                <button class="create" id="create-btn">Create</button>
-            </div>
-        </form>
-        <button class="close" id="closeEvent">&times;</button>
+                    <input type="checkbox" id="reminder_check">
+                    <label for="reminder_check">Remind me when this event expires</label><br>
+                    <label for="description">Description:</label><br>
+                    <textarea rows="6" cols="40" maxlength="500" id="description"></textarea><br>
+                    <label for="typeEvent">Event Type:</label><select id="typeEvent">
+                        <option>Meeting</option>
+                        <option>Interview</option>
+                        <option>Sports</option>
+                        <option>Doctors Appointment</option>
+                        <option>Travel Schedule</option>
+                    </select>
+                <div class="create_cancel_container">
+                    <button class="cancel" id="cancel-btn">Cancel</button>
+                    <button class="create" id="create-btn">Create</button>
+                </div>
+            </form>
+        </div>
     </div>
 
 
     </div>
     <header>
         <h2 class="header-calendar">JS Calendar</h2>
-        <button id="newEvent" class="AddEvent">Add Event</button>
+        <button id="new_event" class="add_event">Add Event</button>
     </header>
 
     <main class="main-window">
