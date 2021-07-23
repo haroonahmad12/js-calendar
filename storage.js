@@ -2,18 +2,6 @@ let creatEvent = document.getElementById("create-btn");
 
 var saveDataArray;
 
-// get local Storage items
-/*
-function getLocalItems() {
-    if (localStorage.getItem("Forms") !== null) {
-        saveDataArray = JSON.parse(localStorage.getItem("Forms"));
-    } else {
-        saveDataArray = [];
-    }
-}
-getLocalItems();
-
-*/
 creatEvent.addEventListener("click", saveData);
 
 function saveData(e) {
@@ -22,6 +10,10 @@ function saveData(e) {
     //Get Date Value from the input form
     var splitted = document.getElementById("dateTime").value;
     splitted = splitted.split("-");
+
+    var time = splitted[2].split("T");
+
+    time = time[1];
 
     var eventYear = parseInt(splitted[0]);
     var eventMonth = parseInt(splitted[1]) - 1;
@@ -52,6 +44,7 @@ function saveData(e) {
     let newArray = {
         title: title,
         date: date,
+        time: time,
         description: descriptionValue,
         eventType: eventType,
         endDate: endDate,

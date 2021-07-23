@@ -1,4 +1,4 @@
-/*var nextMonthEvents = document.getElementById("next-month");
+var nextMonthEvents = document.getElementById("next-month");
 var prevMonthEvents = document.getElementById("prev-month");
 
 // --------------ADD EVENT LISTENERS
@@ -11,14 +11,9 @@ function printNextEvents() {
 
     for (let i = 0; i < 42; i++) {
         let allDaysId = dias[i].getAttribute("id");
-
-        allDaysId = allDaysId.split(" ");
-
-        console.log(typeof allDaysId);
     }
 }
 
 function printPrevEvents() {
     console.log("read correct");
 }
-*/

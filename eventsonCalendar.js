@@ -3,5 +3,5 @@ var inputDate;
 if (document.getElementById("dateTime").value !== null) {
     inputDate = document.getElementById("dateTime").value;
 } else {
-    console.log("novalue");
+    console.log(inputDate);
 }
