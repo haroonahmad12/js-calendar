@@ -65,17 +65,16 @@ function createMonth(month) {
             currentMonth === new Date().getMonth() &&
             currentYear === new Date().getFullYear()
         ) {
-            days.innerHTML += `<div class='every_date today_date' id='today_date'  data-date='every_date'>
+            days.innerHTML += `<div class='every_date today_date' id='${i}_${currentMonth}_${currentYear}'  data-date='every_date'>
                                         <p class="day_number">${i}</p>
                                         <button class="plus_button" data-button='plus-button'>+</button>
                                 </div>`;
         } else if (i <= lastDay) {
-            days.innerHTML += `<div class='every_date current_month_date' data-date='every_date' id ="${i}">
+            days.innerHTML += `<div class='every_date current_month_date' data-date='every_date' id ="${i}_${currentMonth}_${currentYear}">
                                         <p class="day_number">${i}</p>
                                         <button class="plus_button" data-button='plus-button'>+</button>
                                 </div>`;
         } else if (i <= lastDay + 1) {
-            console.log(lastCell);
             for (let j = 1; j <= lastCell; j++)
                 days.innerHTML += `<div class='every_date next_month_date'>${j}</div>`;
         }
