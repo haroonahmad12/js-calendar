@@ -244,10 +244,18 @@ button {
     border-radius: 50%;
 }
 
-.doneCancelButtons {
+.create_cancel_container {
     display: flex;
     margin: 2rem;
     justify-content: center;
+}
+
+.cancel {
+    width: 5rem;
+}
+
+.create {
+    width: 5rem;
 }
 
 .hide {
