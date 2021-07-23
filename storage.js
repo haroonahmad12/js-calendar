@@ -21,26 +21,30 @@ function saveData(e) {
 
     //Get Date Value from the input form
     var splitted = document.getElementById("dateTime").value;
+
     splitted = splitted.split("-");
+
+    var eventTime = splitted[2].split("T");
+
+    eventTime = eventTime[1];
 
     var eventYear = parseInt(splitted[0]);
     var eventMonth = parseInt(splitted[1]) - 1;
 
     splitted = splitted[2].split(":");
-    splitted = splitted[0].split("T");
-    eventDay = parseInt(splitted[0]);
 
-    var newDaysId = eventDay + "_" + eventMonth + "_" + eventYear; //ID for days which coincides with the respective date.
+    splitted = splitted[0].split("T");
+
+    var eventDay = parseInt(splitted[0]);
 
     var title = document.getElementById("titleName").value;
-    var date = newDaysId;
+    var date = eventDay + "_" + eventMonth + "_" + eventYear; //ID for days which coincides with the respective date.
     var descriptionValue = document.getElementById("description").value;
     var eventType = document.getElementById("typeEvent").value;
     var endDate = document.getElementById("end-date").value;
     var endTime = document.getElementById("end-time").value;
-    var remindInterval = document.getElementById("reminder-select").value;
-
-    //document.getElementById(newDaysId).innerHTML += `<div>${title}</div>`; //Add Event Div to Calendar Days
+    var remindInterval =
+        document.getElementById("reminder-select").value + " minutes";
 
     //Save local Data
     if (localStorage.getItem(`${date}`) !== null) {
@@ -49,9 +53,10 @@ function saveData(e) {
         saveDataArray = [];
     }
 
-    let newArray = {
+    let toSaveString = {
         title: title,
         date: date,
+        time: eventTime,
         description: descriptionValue,
         eventType: eventType,
         endDate: endDate,
@@ -59,7 +64,8 @@ function saveData(e) {
         remindInterval: remindInterval,
     };
 
-    saveDataArray.push(newArray);
+    saveDataArray.push(toSaveString);
 
     localStorage.setItem(`${date}`, JSON.stringify(saveDataArray));
+    //document.getElementById(date).innerHTML += `<div>${title}</div>`; //Add Event Div to Calendar Days
 }

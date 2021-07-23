@@ -5,6 +5,7 @@ var newEventAdder = document.getElementById("new_event");
 var newEventModal = document.getElementById("new_event_modal");
 var crossButton2 = document.getElementById("close_modal2");
 var cancelButton = document.getElementById("cancel-btn");
+var createButton = document.getElementById("create-btn");
 
 // ADD EVENT LISTENERS
 
