@@ -33,17 +33,17 @@
         <form id="add-event-form">
             <h2>New Event</h2>
             <div>
-                <label for="title">Title:</label> <input id="titleName" type="text" required maxlength="60" /></div>
+                <label>Title:</label> <input id="titleName" type="text" required maxlength="60" /></div>
             <div><label>Initial Date:</label>
-                <input type="datetime-local" id="dateTime" /></div>
+                <input type="datetime-local" id="dateTime" required/></div>
 
 
             <div>
-                <label for="end-date-check">
+                <label>
                     <input type="checkbox" id="end-date-check" />
                     End date
                   </label>
-                <label for="end" class="hide" id="endDateInput">
+                <label class="hide" id="endDateInput">
                     <input type="date"  id="end-date" />
                     <input type="time"  id="end-time" />
                   </label>
@@ -52,7 +52,7 @@
 
                 <input type="checkbox" id="reminder-check">Remind me when this event expires</input>
                 <br>
-                <label for="reminder-select" id="label-reminder-select" class="hide">Remind Interval
+                <label id="label-reminder-select" class="hide">Remind Interval
                 <select  id="reminder-select">
                   <option value="5">5 minutes</option>
                   <option value="10">10 minutes</option>
@@ -61,9 +61,9 @@
                   <option value="60">1 hour</option>
                 </select>
               </label>
-            </div><label for="description">Description:</label><br>
+            </div><label>Description:</label><br>
             <textarea rows="6" cols="40" maxlength="500" id="description"></textarea><br>
-            <label for="typeEvent">Event Type:</label><select id="typeEvent">
+            <label>Event Type:</label><select id="typeEvent">
                     <option>Meeting</option>
                     <option>Interview</option>
                     <option>Sports</option>
