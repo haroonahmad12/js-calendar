@@ -1,7 +1,23 @@
 var nextMonthEvents = document.getElementById("next-month");
 var prevMonthEvents = document.getElementById("prev-month");
 
-let retrievedItems;
+function printCurrentEvent() {
+    let retrieveData = JSON.parse(localStorage.getItem(`CalendarEvents`));
+    if (retrieveData !== null) {
+        for (let j = 0; j < retrieveData.length; j++) {
+            retrieveId = retrieveData[j].id;
+            retrieveTitle = retrieveData[j].title;
+
+            if (document.getElementById(`${retrieveId}`) !== null) {
+                document.getElementById(
+                    `${retrieveId}`
+                ).innerHTML += `<div class = "calendar-event">${retrieveTitle}</div>`;
+            }
+        }
+    }
+}
+
+printCurrentEvent();
 
 // --------------ADD EVENT LISTENERS
 
@@ -9,23 +25,9 @@ nextMonthEvents.addEventListener("click", printNextEvents);
 prevMonthEvents.addEventListener("click", printPrevEvents);
 
 function printNextEvents() {
-    var dias = document.querySelectorAll(".every_date");
-
-    for (let i = 0; i < 42; i++) {
-        let allDaysId = dias[i].getAttribute("id");
-
-        //allDaysId.forEach((dayID) => {});
-
-        //retrievedItems = JSON.parse(localStorage.getItem(`${allDaysId}`));
-
-        // document.getElementById(`${allDaysId[i]}`).innerHTML += JSON.parse(
-        //     localStorage.getItem(`${allDaysId}`)
-        //  );
-        console.log(allDaysId);
-        console.log(typeof allDaysId);
-    }
+    printCurrentEvent();
 }
 
 function printPrevEvents() {
-    console.log("read correct");
+    printCurrentEvent();
 }

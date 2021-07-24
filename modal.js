@@ -62,3 +62,11 @@ function checkBox1() {
     var checkbox = document.getElementById("reminder-check");
     document.getElementById("label-reminder-select").classList.toggle("hide");
 }
+
+//ESC keydown Event
+
+window.addEventListener("keydown", (event) => {
+    if (event.keyCode === 27) {
+        closeNewEvent();
+    }
+});
