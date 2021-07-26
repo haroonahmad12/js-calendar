@@ -1,21 +1,18 @@
 var nextMonthEvents = document.getElementById("next-month");
 var prevMonthEvents = document.getElementById("prev-month");
-var retrieveData;
 
 function printCurrentEvent() {
-    retrieveData = JSON.parse(localStorage.getItem(`CalendarEvents`));
+    if (saveDataArray !== null) {
+        for (let j = 0; j < saveDataArray.length; j++) {
+            var retrieveId = saveDataArray[j].id;
+            var deletionId = saveDataArray[j].delId;
 
-    if (retrieveData !== null) {
-        for (let j = 0; j < retrieveData.length; j++) {
-            var retrieveId = retrieveData[j].id;
-            var deletionId = retrieveData[j].delId;
-
-            var retrieveTitle = retrieveData[j].title;
+            var retrieveTitle = saveDataArray[j].title;
 
             if (document.getElementById(`${retrieveId}`) !== null) {
                 document.getElementById(
                     `${retrieveId}`
-                ).innerHTML += `<div class = "calendar-event" id = "${deletionId}">${retrieveTitle}</div>`;
+                ).innerHTML += `<span class = "calendar-event" id = "${deletionId}">${retrieveTitle}</span>`;
             }
         }
     }
@@ -30,8 +27,10 @@ prevMonthEvents.addEventListener("click", printPrevEvents);
 
 function printNextEvents() {
     printCurrentEvent();
+    recieveAllEvents();
 }
 
 function printPrevEvents() {
     printCurrentEvent();
+    recieveAllEvents();
 }

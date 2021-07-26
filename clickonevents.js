@@ -1,12 +1,16 @@
-let addedEvents = document.getElementsByClassName("calendar-event");
-
-for (let i = 0; i < addedEvents.length; i++) {
-    addedEvents[i].addEventListener("click", showDetails);
+function recieveAllEvents() {
+    var addedEvents;
+    addedEvents = document.getElementsByClassName("calendar-event");
+    for (let i = 0; i < addedEvents.length; i++) {
+        addedEvents[i].addEventListener("click", showDetails);
+    }
 }
+recieveAllEvents();
 
 function showDetails() {
     // Find the Event in LocalStorage and Get Data
-    let findID = parseInt(event.target.getAttribute("id"));
+    let findID = parseInt(event.target.getAttribute("id")); //ID of event we are clicking
+
     var eventTitle;
     var eventDate;
     var eventTime;
@@ -15,18 +19,21 @@ function showDetails() {
     var endDate;
     var remindInterval;
 
-    for (let i = 0; i < retrieveData.length; i++)
-        if (retrieveData[i].delId == findID) {
-            eventTitle = retrieveData[i].title;
-            eventDate = retrieveData[i].date;
-            eventTime = retrieveData[i].time;
-            eventDescription = retrieveData[i].description;
-            eventType = retrieveData[i].eventType;
-            endDate = retrieveData[i].endDate;
-            remindInterval = retrieveData[i].remindInterval;
+    for (let i = 0; i < saveDataArray.length; i++) {
+        if (saveDataArray[i].delId == findID) {
+            //Get Data from the LocalStorage
+            eventTitle = saveDataArray[i].title;
+            eventDate = saveDataArray[i].date;
+            eventTime = saveDataArray[i].time;
+            eventDescription = saveDataArray[i].description;
+            eventType = saveDataArray[i].eventType;
+            endDate = saveDataArray[i].endDate;
+            endTime = saveDataArray[i].endTime;
+            remindInterval = saveDataArray[i].remindInterval;
         }
+    }
 
-        //Create Modal when clicked on an event to show its details
+    //Create Modal when clicked on an event to show its details
     var eventModal = document.createElement("div");
     var body = document.getElementsByTagName("body")[0];
     eventModal.classList.add("modal");
@@ -43,6 +50,7 @@ function showDetails() {
 <span class = "event-title"> Description: <b>  ${eventDescription} </b></span>
 <span class = "event-title"> Type: <b>  ${eventType} </b></span>
 <span class = "event-title"> End Date: <b>  ${endDate} </b></span>
+<span class = "event-title"> End Time: <b>  ${endTime} </b></span>
 <span class = "event-title"> Remind Interval: <b>  ${remindInterval} </b></span>
 </div>
 
@@ -50,11 +58,43 @@ function showDetails() {
 
    
 </div>
-    `;
-
+`;
     //Close Modal and Delete the newly created Div
     var eventModalCrossBtn = document.getElementById("close_modal3");
-    eventModalCrossBtn.addEventListener("click", () => {
+
+    eventModalCrossBtn.addEventListener("click", closeModal);
+
+    function closeModal() {
         document.getElementById("event-modal").remove();
+    }
+
+    //ESC Keyclose Function
+    window.addEventListener("keydown", (event) => {
+        if (event.keyCode === 27) {
+            if (document.getElementById("event-modal") !== null) {
+                closeModal();
+            }
+        }
     });
+
+    //Close if clicked outside modal window
+
+    window.onclick = function(event) {
+        if (event.target == document.querySelector("#event-modal")) {
+            closeModal();
+        }
+    };
+
+    //delete button functionality
+
+    document.getElementById("delete").addEventListener("click", deleteEvent);
+
+    function deleteEvent() {
+        saveDataArray = saveDataArray.filter((event) => event.delId != findID);
+
+        localStorage.setItem(`CalendarEvents`, JSON.stringify(saveDataArray));
+        //Close Modal and remove event from Calendar Physically (still saved in local Storage)
+        document.getElementById("event-modal").remove();
+        document.getElementById(findID).remove();
+    }
 }

@@ -18,19 +18,24 @@ function saveData(e) {
 
     //Get Date Value from the input form
     if (document.getElementById("dateTime").value !== "") {
+        //Split date and time values
+
         var splitted = document.getElementById("dateTime").value;
-        splitted = splitted.split("-");
-        console.log(splitted);
-        var time = splitted[2].split("T");
+        splitted = splitted.split("T");
 
-        time = time[1];
+        // Date Found
 
-        var eventYear = parseInt(splitted[0]); //INTEGER
+        var date = splitted[0];
+        //Time Found
+
+        var time = splitted[1];
+
+        splitted = splitted[0].split("-");
+        //All Data Found
+
+        var eventYear = parseInt(splitted[0]);
         var eventMonth = parseInt(splitted[1]) - 1;
-
-        splitted = splitted[2].split(":");
-        splitted = splitted[0].split("T");
-        eventDay = parseInt(splitted[0]);
+        var eventDay = parseInt(splitted[2]);
 
         var newDaysId = eventDay + "_" + eventMonth + "_" + eventYear; //ID for days which coincides with the respective date.
 
@@ -52,7 +57,7 @@ function saveData(e) {
             description: descriptionValue,
             eventType: eventType,
             endDate: endDate,
-
+            endTime: endTime,
             remindInterval: remindInterval,
             delId: delId,
         };
