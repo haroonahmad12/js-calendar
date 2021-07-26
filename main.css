@@ -12,6 +12,7 @@ header {
 body {
     width: 100%;
     margin: auto;
+    max-width: 70rem;
 }
 
 button {
@@ -285,4 +286,9 @@ button {
 
 .calendar-event:nth-child(3n + 2) {
     background-color: black;
+}
+
+.event-objects {
+    display: flex;
+    flex-direction: column;
 }

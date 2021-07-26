@@ -13,12 +13,14 @@ saveLocalData();
 
 creatEvent.addEventListener("click", saveData);
 
-function saveData() {
+function saveData(e) {
+    //e.preventDefault();
+
     //Get Date Value from the input form
     if (document.getElementById("dateTime").value !== "") {
         var splitted = document.getElementById("dateTime").value;
         splitted = splitted.split("-");
-
+        console.log(splitted);
         var time = splitted[2].split("T");
 
         time = time[1];
@@ -34,12 +36,13 @@ function saveData() {
 
         var title = document.getElementById("titleName").value;
         var id = newDaysId;
-        var date = eventDay + "/" + eventMonth + "/" + eventYear;
+        var date;
         var descriptionValue = document.getElementById("description").value;
         var eventType = document.getElementById("typeEvent").value;
         var endDate = document.getElementById("end-date").value;
         var endTime = document.getElementById("end-time").value;
         var remindInterval = document.getElementById("reminder-select").value;
+        var delId = Math.floor(Math.random() * 1000000);
 
         let newArray = {
             id: id,
@@ -51,7 +54,7 @@ function saveData() {
             endDate: endDate,
 
             remindInterval: remindInterval,
-            delId: Math.floor(Math.random() * 1000000),
+            delId: delId,
         };
         saveDataArray.push(newArray);
 

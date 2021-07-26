@@ -35,16 +35,3 @@ function printNextEvents() {
 function printPrevEvents() {
     printCurrentEvent();
 }
-
-/*prueba
-function getIds() {
-    let n = document.querySelectorAll(".calendar-event");
-
-    for (let i = 0; i < n.length; i++) {
-        n = parseInt(n[i].getAttribute("id"));
-
-        console.log(n);
-    }
-}
-
-getIds(); */
