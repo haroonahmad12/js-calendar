@@ -10,7 +10,7 @@ header {
 }
 
 body {
-    width: 100%;
+    
     margin: auto;
     max-width: 70rem;
 }
@@ -28,6 +28,7 @@ button {
 
 .main-window {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 1.25rem;
     margin: auto;
@@ -158,11 +159,6 @@ button {
 .today_date {
     background-color: rgba(45, 6, 218, 0.76);
     color: white;
-    font-size: 3rem;
-}
-
-.today_date:hover {
-    opacity: 50%;
 }
 
 .previous_month_date,
@@ -190,8 +186,8 @@ button {
 }
 
 .today_date .day_number {
-    position: absolute;
-    margin: auto;
+    margin: 0.2rem 0rem;
+    font-size: 2.2rem;
 }
 
 
