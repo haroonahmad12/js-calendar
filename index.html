@@ -46,23 +46,24 @@
                     End date
                   </label>
                 <label class="hide" id="endDateInput">
-                    <input type="date"  id="end-date" />
-                    <input type="time"  id="end-time" />
+                    <input type="date"  id="end-date" min="" />
+                    <input type="time"  id="end-time" min="00:00"/>
                   </label>
             </div>
             <div>
 
-                <input type="checkbox" id="reminder-check">Remind me when this event expires</input>
+                <input type="checkbox" id="reminder-check"> Reminder</input>
                 <br>
-                <label id="label-reminder-select" class="hide">Remind Interval
+                <label id="label-reminder-select" class="hide">Remind me 
                 <select  id="reminder-select">
-                  <option value="5">5 minutes</option>
-                  <option value="10">10 minutes</option>
-                  <option value="15">15 minutes</option>
-                  <option value="30">30 minutes</option>
-                  <option value="60">1 hour</option>
+                  <option value="5">5 Minutes</option>
+                  <option value="10">10 Minutes</option>
+                  <option value="30">30 Minutes</option>
+                  <option value="60">1 Hour</option>
+                  <option value="1440"> 1 Day</option>
                 </select>
-              </label>
+                before this event start
+                </label>
             </div><label>Description:</label><br>
             <textarea rows="6" cols="40" maxlength="500" id="description"></textarea><br>
             <label>Event Type:</label><select id="typeEvent">
