@@ -36,9 +36,9 @@ function saveData(e) {
         var eventYear = parseInt(splitted[0]);
         var eventMonth = parseInt(splitted[1]) - 1;
         var eventDay = parseInt(splitted[2]);
+        //ID for days which coincides with the respective date.
 
-        var newDaysId = eventDay + "_" + eventMonth + "_" + eventYear; //ID for days which coincides with the respective date.
-
+        var newDaysId = eventDay + "_" + eventMonth + "_" + eventYear;
         var title = document.getElementById("titleName").value;
         var id = newDaysId;
         var date;
