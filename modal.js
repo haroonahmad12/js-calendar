@@ -17,6 +17,10 @@ cancelButton.addEventListener("click", closeNewEvent);
 
 // FUNCTIONS
 
+document
+    .getElementById("dateTime")
+    .setAttribute("min", new Date().toISOString().substring(0, 16));
+
 function showModal() {
     document.getElementById("modal").classList.remove("is_hidden");
     showForm();
