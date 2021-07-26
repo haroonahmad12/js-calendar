@@ -6,13 +6,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: auto;
 }
 
 body {
-    width: 100%;
-    margin: auto;
-    max-width: 70rem;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(216, 213, 213);
 }
 
 button {
@@ -28,14 +27,12 @@ button {
 
 .main-window {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 1.25rem;
-    margin: auto;
 }
 
 .calendar_container {
     width: 100%;
-    align-content: center;
 }
 
 .dates_container {

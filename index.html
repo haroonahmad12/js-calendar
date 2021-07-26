@@ -15,45 +15,47 @@
     <script src="clickonevents.js" defer></script>
 
 </head>
-<div class="modal is_hidden" id="modal">
-    <div class="modal_summary is_hidden" id="summary_events">
-        <div class="day_events" id="day_events">
-            <h3>Today Events</h3>
-            <p id="no_events">No events has been added.</p>
-            <p>evento 1</p>
-            <p>evento 2</p>
-            <p>evento 3</p>
+
+<body>
+    <div class="modal is_hidden" id="modal">
+        <div class="modal_summary is_hidden" id="summary_events">
+            <div class="day_events" id="day_events">
+                <h3>Today Events</h3>
+                <p id="no_events">No events has been added.</p>
+                <p>evento 1</p>
+                <p>evento 2</p>
+                <p>evento 3</p>
+            </div>
+            <div class="close_add_container" id="close_add_container">
+                <button class="close" id="close_modal">&times;</button>
+                <button id="new_event_modal" class="add_event">Add Event</button>
+            </div>
         </div>
-        <div class="close_add_container" id="close_add_container">
-            <button class="close" id="close_modal">&times;</button>
-            <button id="new_event_modal" class="add_event">Add Event</button>
-        </div>
-    </div>
-    <div class="modal_objects is_hidden" id="modal_form_container">
-        <button class="close" id="close_modal2">&times;</button>
-        <form id="add-event-form">
-            <h2>New Event</h2>
-            <div>
-                <label>Title:</label> <input id="titleName" type="text" required maxlength="60" /></div>
-            <div><label>Initial Date:</label>
-                <input type="datetime-local" id="dateTime" required/></div>
+        <div class="modal_objects is_hidden" id="modal_form_container">
+            <button class="close" id="close_modal2">&times;</button>
+            <form id="add-event-form">
+                <h2>New Event</h2>
+                <div>
+                    <label>Title:</label> <input id="titleName" type="text" required maxlength="60" /></div>
+                <div><label>Initial Date:</label>
+                    <input type="datetime-local" id="dateTime" required/></div>
 
 
-            <div>
-                <label>
+                <div>
+                    <label>
                     <input type="checkbox" id="end-date-check" />
                     End date
                   </label>
-                <label class="hide" id="endDateInput">
+                    <label class="hide" id="endDateInput">
                     <input type="date"  id="end-date" />
                     <input type="time"  id="end-time" />
                   </label>
-            </div>
-            <div>
+                </div>
+                <div>
 
-                <input type="checkbox" id="reminder-check">Remind me when this event expires</input>
-                <br>
-                <label id="label-reminder-select" class="hide">Remind Interval
+                    <input type="checkbox" id="reminder-check">Remind me when this event expires</input>
+                    <br>
+                    <label id="label-reminder-select" class="hide">Remind Interval
                 <select  id="reminder-select">
                   <option value="5">5 minutes</option>
                   <option value="10">10 minutes</option>
@@ -62,31 +64,31 @@
                   <option value="60">1 hour</option>
                 </select>
               </label>
-            </div><label>Description:</label><br>
-            <textarea rows="6" cols="40" maxlength="500" id="description"></textarea><br>
-            <label>Event Type:</label><select id="typeEvent">
+                </div><label>Description:</label><br>
+                <textarea rows="6" cols="40" maxlength="500" id="description"></textarea><br>
+                <label>Event Type:</label><select id="typeEvent">
                     <option>Meeting</option>
                     <option>Interview</option>
                     <option>Sports</option>
                     <option>Doctors Appointment</option>
                     <option>Travel Schedule</option>
                 </select>
-            <div class="create_cancel_container">
-                <button class="cancel" id="cancel-btn">Cancel</button>
-                <button class="create" id="create-btn">Create</button>
-            </div>
-        </form>
+                <div class="create_cancel_container">
+                    <button class="cancel" id="cancel-btn">Cancel</button>
+                    <button class="create" id="create-btn">Create</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<body>
-
-    <header>
-        <h2 class="header-calendar">JS Calendar</h2>
-        <button id="new_event" class="add_event">Add Event</button>
-    </header>
 
     <main class="main-window">
+
+        <header>
+            <h2 class="header-calendar">JS Calendar</h2>
+            <button id="new_event" class="add_event">Add Event</button>
+        </header>
+
         <!-- Month Strip Item-->
         <div class="calendar_container">
             <div class="month-row">
