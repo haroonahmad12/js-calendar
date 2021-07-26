@@ -14,9 +14,7 @@
     <script src="retrievedata.js" defer></script>
     <script src="clickonevents.js" defer></script>
 
-
 </head>
-
 
 <body>
     <div class="modal is_hidden" id="modal">
@@ -40,42 +38,42 @@
                 <div>
                     <label>Title:</label> <input id="titleName" type="text" required maxlength="60" /></div>
                 <div><label>Initial Date:</label>
-                    <input type="datetime-local" id="dateTime" min="2021-07-26T16:32" required/></div>
-    
-    
+                    <input type="datetime-local" id="dateTime" required/></div>
+
+
                 <div>
                     <label>
-                        <input type="checkbox" id="end-date-check" />
-                        End date
-                      </label>
+                    <input type="checkbox" id="end-date-check" />
+                    End date
+                  </label>
                     <label class="hide" id="endDateInput">
-                        <input type="date"  id="end-date" min="" />
-                        <input type="time"  id="end-time" min="00:00"/>
-                      </label>
+                    <input type="date"  id="end-date" min="" />
+                    <input type="time"  id="end-time" min="00:00"/>
+                  </label>
                 </div>
                 <div>
-    
+
                     <input type="checkbox" id="reminder-check"> Reminder</input>
                     <br>
                     <label id="label-reminder-select" class="hide">Remind me 
-                    <select  id="reminder-select">
-                      <option value="5">5 Minutes</option>
-                      <option value="10">10 Minutes</option>
-                      <option value="30">30 Minutes</option>
-                      <option value="60">1 Hour</option>
-                      <option value="1440"> 1 Day</option>
-                    </select>
-                    before this event start
-                    </label>
+                <select  id="reminder-select">
+                  <option value="5">5 Minutes</option>
+                  <option value="10">10 Minutes</option>
+                  <option value="30">30 Minutes</option>
+                  <option value="60">1 Hour</option>
+                  <option value="1440"> 1 Day</option>
+                </select>
+                before this event start
+                </label>
                 </div><label>Description:</label><br>
                 <textarea rows="6" cols="40" maxlength="500" id="description"></textarea><br>
                 <label>Event Type:</label><select id="typeEvent">
-                        <option>Meeting</option>
-                        <option>Interview</option>
-                        <option>Sports</option>
-                        <option>Doctors Appointment</option>
-                        <option>Travel Schedule</option>
-                    </select>
+                    <option>Meeting</option>
+                    <option>Interview</option>
+                    <option>Sports</option>
+                    <option>Doctors Appointment</option>
+                    <option>Travel Schedule</option>
+                </select>
                 <div class="create_cancel_container">
                     <button class="cancel" id="cancel-btn">Cancel</button>
                     <button class="create" id="create-btn">Create</button>
@@ -84,9 +82,9 @@
         </div>
     </div>
 
-    
 
     <main class="main-window">
+
         <header>
             <h2 class="header-calendar">JS Calendar</h2>
             <button id="new_event" class="add_event">Add Event</button>
