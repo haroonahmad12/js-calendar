@@ -66,6 +66,7 @@ button {
     justify-content: space-between;
     margin-bottom: 2rem;
     border-radius: 1rem;
+    padding-bottom: 2.4rem;
 }
 
 .days-name-container {
