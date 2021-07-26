@@ -23,7 +23,7 @@ function saveData() {
 
         time = time[1];
 
-        var eventYear = parseInt(splitted[0]);
+        var eventYear = parseInt(splitted[0]); //INTEGER
         var eventMonth = parseInt(splitted[1]) - 1;
 
         splitted = splitted[2].split(":");
@@ -51,6 +51,7 @@ function saveData() {
             endDate: endDate,
 
             remindInterval: remindInterval,
+            delId: Math.floor(Math.random() * 1000000),
         };
         saveDataArray.push(newArray);
 
@@ -60,11 +61,11 @@ function saveData() {
         if (document.getElementById(id) !== null) {
             document.getElementById(
                 id
-            ).innerHTML += `<div class = "calendar-event">${title}</div>`;
+            ).innerHTML += `<div class = "calendar-event" id = "${delId}">${title}</div>`;
+
+            //close event window after adding event
+
+            closeNewEvent();
         }
-
-        //close event window after adding event
-
-        closeNewEvent();
     }
 }

@@ -39,6 +39,7 @@ function closeNewEvent() {
     document.getElementById("add-event-form").reset();
 }
 
+function showEventDetails() {}
 //Close Modal while clicking outside the modal window
 
 window.onclick = function(event) {
