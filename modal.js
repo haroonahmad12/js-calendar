@@ -73,13 +73,15 @@ window.onclick = function(event) {
 document.getElementById("end-date-check").addEventListener("click", checkBox);
 
 function checkBox() {
-    document.getElementById("endDateInput").classList.toggle("hide");
+    document.getElementById("endDateInput").classList.toggle("is_hidden");
 }
 
 document.getElementById("reminder-check").addEventListener("click", checkBox1);
 
 function checkBox1() {
-    document.getElementById("label-reminder-select").classList.toggle("hide");
+    document
+        .getElementById("label-reminder-select")
+        .classList.toggle("is_hidden");
 }
 // END CHECKBOX FUNCTION
 

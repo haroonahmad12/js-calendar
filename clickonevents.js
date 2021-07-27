@@ -48,7 +48,7 @@ function showDetails() {
 
     body.prepend(eventModal);
 
-    eventModal.innerHTML = `<div class="modal_objects" id="modal_form_container">
+    eventModal.innerHTML = `<div class="modal_summary" id="modal_form_container">
     <button class="close" id="close_modal3">&times;</button>
   <div class = "event-objects">        
 <span class = "event-title"> Title: <b>  ${eventTitle} </b></span>
@@ -61,7 +61,7 @@ function showDetails() {
 <span class = "event-title"> Remind Interval: <b>  ${remindInterval} Minutes Before the event Starts </b></span>
 </div>
 
-<button class="cancel" id= "delete">Delete Event</button>
+<button class="add_event" id= "delete">Delete Event</button>
 
    
 </div>
