@@ -50,7 +50,7 @@ function showEventDetails() {}
 //Close Modal while clicking outside the modal window
 
 window.onclick = function(event) {
-    if (event.target == document.querySelector("#modal")) {
+    if (event.target == document.getElementById("modal")) {
         document.getElementById("modal").classList.add("is_hidden");
         document.getElementById("modal_form_container").classList.add("is_hidden");
         document.getElementById("summary_events").classList.add("is_hidden");
