@@ -1,23 +1,27 @@
 let creatEvent = document.getElementById("create-btn");
 
 var saveDataArray;
-
+//----------DETECTS IF THERE IS DATA IN LOCAL STORAGE
 function saveLocalData() {
     if (localStorage.getItem(`CalendarEvents`) !== null) {
         saveDataArray = JSON.parse(localStorage.getItem(`CalendarEvents`));
     } else {
-        saveDataArray = [];
+        saveDataArray = []; //if there is no data then make it an empty array, to be able to push data in array afterwards
     }
 }
 saveLocalData();
 
+//END RETRIEVE DATA FUNCTION
+
 creatEvent.addEventListener("click", saveData);
 
 function saveData(e) {
-    //e.preventDefault();
-
+    e.preventDefault();
     //Get Date Value from the input form
-    if (document.getElementById("dateTime").value !== "") {
+    if (
+        document.getElementById("dateTime").value !== "" &&
+        document.getElementById("titleName").value !== ""
+    ) {
         //Split date and time values
 
         var splitted = document.getElementById("dateTime").value;
@@ -39,12 +43,10 @@ function saveData(e) {
         var eventYear = parseInt(splitted[0]);
         var eventMonth = parseInt(splitted[1]) - 1;
         var eventDay = parseInt(splitted[2]);
-        //ID for days which coincides with the respective date.
 
-        var newDaysId = eventDay + "_" + eventMonth + "_" + eventYear;
+        var newDaysId = eventDay + "_" + eventMonth + "_" + eventYear; //ID for days which coincides with the respective date.
         var title = document.getElementById("titleName").value;
         var id = newDaysId;
-        var date;
         var descriptionValue = document.getElementById("description").value;
         var eventType = document.getElementById("typeEvent").value;
         var endDate = document.getElementById("end-date").value;
@@ -81,4 +83,5 @@ function saveData(e) {
             closeNewEvent();
         }
     }
+    recieveAllEvents();
 }
