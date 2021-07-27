@@ -34,7 +34,8 @@
         </div>
         <div class="modal_objects is_hidden" id="modal_form_container">
             <button class="close" id="close_modal2">&times;</button>
-            <form id="add-event-form">
+            <form class="form" id="add-event-form" onsubmit="return false">
+
                 <h2>New Event</h2>
                 <div class="input_div">
                     <label for="titleName">Title:</label> <input id="titleName" class="title_input" type="text" required maxlength="60" /></div>
@@ -82,8 +83,9 @@
                 </div>
                 <div class="create_cancel_container">
                     <button class="add_event" id="cancel-btn">Cancel</button>
-                    <button class="add_event" id="create-btn">Create</button>
+                    <input type="submit" class="add_event" id="create-btn" value="Create" />
                 </div>
+
             </form>
         </div>
     </div>

@@ -1,4 +1,4 @@
-let creatEvent = document.getElementById("create-btn");
+let creatEvent = document.getElementById("add-event-form");
 
 var saveDataArray;
 //----------DETECTS IF THERE IS DATA IN LOCAL STORAGE
@@ -13,10 +13,9 @@ saveLocalData();
 
 //END RETRIEVE DATA FUNCTION
 
-creatEvent.addEventListener("click", saveData);
+creatEvent.addEventListener("submit", saveData);
 
-function saveData(e) {
-    e.preventDefault();
+function saveData() {
     //Get Date Value from the input form
     if (
         document.getElementById("dateTime").value !== "" &&
