@@ -37,15 +37,15 @@
             <form id="add-event-form">
                 <h2>New Event</h2>
                 <div class="input_div">
-                    <label for="titleName">Title</label> <input id="titleName" class="title_input" type="text" required maxlength="60" /></div>
+                    <label for="titleName">Title:</label> <input id="titleName" class="title_input" type="text" required maxlength="60" /></div>
                 <div class="input_div">
-                    <label for="dateTime">Initial Date</label>
+                    <label for="dateTime">Initial Date:</label>
                     <input type="datetime-local" id="dateTime" class="init_date" required/>
                 </div>
                 <div class="input_div">
                     <label>
                     <input type="checkbox" id="end-date-check" />
-                    End date
+                    End date:
                   </label>
                     <label class="is_hidden" id="endDateInput">
                     <input type="date"  id="end-date" min="" />
@@ -53,7 +53,7 @@
                   </label>
                 </div>
                 <div class="input_div">
-                    <input type="checkbox" id="reminder-check"> Reminder</input>
+                    <input type="checkbox" id="reminder-check"> Reminder:</input>
                     <br>
                     <label id="label-reminder-select" class="is_hidden">Remind me 
                     <select  id="reminder-select">
@@ -67,11 +67,11 @@
                     </label>
                 </div>
                 <div class="input_div">
-                    <label>Description</label><br>
+                    <label>Description:</label><br>
                     <textarea rows="6" cols="42" maxlength="500" id="description"></textarea><br>
                 </div>
                 <div class="input_div">
-                    <label for="typeEvent">Event Type </label>
+                    <label for="typeEvent">Event Type: </label>
                     <select id="typeEvent">
                         <option>Meeting</option>
                         <option>Interview</option>
@@ -100,14 +100,14 @@
             <div class="month-row">
                 <span class="current_time" id="current_time"></span>
                 <div class="buttons_container">
-                    <button class="button_month" id="prev-month"><img src="https://cdn.icon-icons.com/icons2/1993/PNG/512/arrow_arrows_back_direction_left_navigation_right_icon_123236.png" class="prev_arrow arrow_img"></button>
+                    <button class="button_month" id="prev-month"><img src="https://cdn.icon-icons.com/icons2/1993/PNG/512/arrow_arrows_back_direction_left_navigation_right_icon_123236.png" class="prev_arrow arrow_img" alt="<"></button>
                     <div class="month_year_container">
 
                         <p class="month" id="month"></p>
                         <p class="year" id="year"></p>
 
                     </div>
-                    <button class="button_month" id="next-month"><img src="https://cdn.icon-icons.com/icons2/1993/PNG/512/arrow_arrows_back_direction_left_navigation_right_icon_123236.png" class="next_arrow arrow_img"></button>
+                    <button class="button_month" id="next-month"><img src="https://cdn.icon-icons.com/icons2/1993/PNG/512/arrow_arrows_back_direction_left_navigation_right_icon_123236.png" class="next_arrow arrow_img" alt=">"></button>
                 </div>
             </div>
 
