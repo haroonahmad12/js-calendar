@@ -77,6 +77,6 @@ function checkBox1() {
 window.addEventListener("keydown", (event) => {
     if (event.keyCode === 27) {
         closeNewEvent();
+        document.getElementById("add-event-form").reset();
     }
-    document.getElementById("add-event-form").reset();
 });
