@@ -1,3 +1,5 @@
+//SHOWING EVENT DETAILS AND ADDING EVENTS ON CLICK ON CALENDAR DAYS
+
 document.addEventListener("click", (e) => {
     if (e.target.matches("[data-date='every_date']")) {
         showModal();
@@ -5,11 +7,13 @@ document.addEventListener("click", (e) => {
     }
 });
 
+//ADDING NEW EVENT WITH THE + BUTTON
+
 document.addEventListener("click", (e) => {
     if (e.target.matches("[data-button='plus-button']")) {
         showModal();
         showForm();
-
+        // SETTING INPUT DATE AS THE DAY SELECTED
         var timeInCell = e.target.parentNode;
 
         timeInCell = timeInCell.getAttribute("id").split("_");
@@ -34,3 +38,5 @@ document.addEventListener("click", (e) => {
         document.getElementById("dateTime").value = timeInCell;
     }
 });
+
+//  END FUNCTION
