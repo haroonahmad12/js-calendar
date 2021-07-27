@@ -17,8 +17,12 @@ cancelButton.addEventListener("click", closeNewEvent);
 
 // FUNCTIONS
 
-document.getElementById("dateTime").setAttribute("min", new Date().toISOString().substring(0, 16));
-document.getElementById("end-date").setAttribute("min", new Date().toISOString().substring(0, 10));
+document
+    .getElementById("dateTime")
+    .setAttribute("min", new Date().toISOString().substring(0, 16));
+document
+    .getElementById("end-date")
+    .setAttribute("min", new Date().toISOString().substring(0, 10));
 
 function showModal() {
     document.getElementById("modal").classList.remove("is_hidden");
@@ -50,6 +54,7 @@ window.onclick = function(event) {
         document.getElementById("modal").classList.add("is_hidden");
         document.getElementById("modal_form_container").classList.add("is_hidden");
         document.getElementById("summary_events").classList.add("is_hidden");
+        document.getElementById("add-event-form").reset();
     }
 };
 
@@ -73,4 +78,5 @@ window.addEventListener("keydown", (event) => {
     if (event.keyCode === 27) {
         closeNewEvent();
     }
+    document.getElementById("add-event-form").reset();
 });
