@@ -43,15 +43,21 @@ nextMonth.addEventListener("click", followingMonth);
 prevMonth.addEventListener("click", previousMonth);
 //---------------END EVENT LISTENERS
 
-// DECLARING MONTHS AND DISPLAYING MONTHS FUNCTION
+function printNewMonth() {
+    currentDate.setFullYear(currentYear, currentMonth, currentDay);
+    month.innerHTML = monthsNames[currentMonth];
+    year.innerHTML = currentYear.toString();
 
-month.innerHTML = monthsNames[currentMonth];
-year.innerHTML = currentYear.toString();
+    lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-function monthBeginning() {
-    let beginning = new Date(currentYear, currentMonth, 1);
-    return beginning.getDay();
+    lastCell = 42 - (lastDay + monthBeginning(currentMonth));
+    days.innerHTML = "";
+    createMonth(currentMonth);
 }
+
+printNewMonth(currentMonth);
+
+// DECLARING MONTHS AND DISPLAYING MONTHS FUNCTION
 
 function createMonth(month) {
     for (let j = monthBeginning(currentMonth); j > 0; j--) {
@@ -82,20 +88,15 @@ function createMonth(month) {
     }
 }
 
-function printNewMonth() {
-    currentDate.setFullYear(currentYear, currentMonth, currentDay);
-    month.innerHTML = monthsNames[currentMonth];
-    year.innerHTML = currentYear.toString();
-
-    lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
-
-    lastCell = 42 - (lastDay + monthBeginning(currentMonth));
-    days.innerHTML = "";
-    createMonth(currentMonth);
-}
-
-printNewMonth(currentMonth);
 //END FUNCTION: MONTHS DISPLAYED
+
+month.innerHTML = monthsNames[currentMonth];
+year.innerHTML = currentYear.toString();
+
+function monthBeginning() {
+    let beginning = new Date(currentYear, currentMonth, 1);
+    return beginning.getDay();
+}
 
 // MONTH HEADING AND YEAR CHANGING FUNCTION
 
