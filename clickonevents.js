@@ -51,7 +51,7 @@ function showDetails() {
 <span class = "event-title"> Type: <b>  ${eventType} </b></span>
 <span class = "event-title"> End Date: <b>  ${endDate} </b></span>
 <span class = "event-title"> End Time: <b>  ${endTime} </b></span>
-<span class = "event-title"> Remind Interval: <b>  ${remindInterval} </b></span>
+<span class = "event-title"> Remind Interval: <b>  ${remindInterval} Minutes Before the event Starts </b></span>
 </div>
 
 <button class="cancel" id= "delete">Delete Event</button>

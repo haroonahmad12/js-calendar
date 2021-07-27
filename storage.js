@@ -21,6 +21,9 @@ function saveData(e) {
         //Split date and time values
 
         var splitted = document.getElementById("dateTime").value;
+
+        var completeDateForReminder = splitted;
+
         splitted = splitted.split("T");
 
         // Date Found
@@ -47,6 +50,7 @@ function saveData(e) {
         var endDate = document.getElementById("end-date").value;
         var endTime = document.getElementById("end-time").value;
         var remindInterval = document.getElementById("reminder-select").value;
+
         var delId = Math.floor(Math.random() * 1000000);
 
         let newArray = {
@@ -60,6 +64,7 @@ function saveData(e) {
             endTime: endTime,
             remindInterval: remindInterval,
             delId: delId,
+            reminderDate: completeDateForReminder,
         };
         saveDataArray.push(newArray);
 
