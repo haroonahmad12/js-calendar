@@ -1,3 +1,5 @@
+//SETTING ADD EVENT LISTENER TO ALL CALENDAR EVENTS ADDED
+
 function recieveAllEvents() {
     var addedEvents;
     addedEvents = document.getElementsByClassName("calendar-event");
@@ -6,6 +8,9 @@ function recieveAllEvents() {
     }
 }
 recieveAllEvents();
+
+// WE HAD TO PUT IT IN A FUNCTION BECAUSE THIS FUNCTIONALITY NEEDS TO REMAIN WHEN WE CHANGE MONTHS,
+//SO ADDING THE MONTHS TO NEXT AND PREV BUTTONS SOLVED THE PROBLEM
 
 function showDetails() {
     // Find the Event in LocalStorage and Get Data
@@ -18,6 +23,8 @@ function showDetails() {
     var eventType;
     var endDate;
     var remindInterval;
+
+    //GET DATA FROM LOCALSTORAGE
 
     for (let i = 0; i < saveDataArray.length; i++) {
         if (saveDataArray[i].delId == findID) {
@@ -76,14 +83,6 @@ function showDetails() {
             }
         }
     });
-
-    //Close if clicked outside modal window
-
-    window.onclick = function(event) {
-        if (event.target == document.querySelector("#event-modal")) {
-            closeModal();
-        }
-    };
 
     //delete button functionality
 

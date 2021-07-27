@@ -17,6 +17,7 @@ function printCurrentEvent() {
         }
     }
 }
+// SHOW EVENTS WHEN PAGE LOADS
 
 printCurrentEvent();
 
@@ -24,6 +25,8 @@ printCurrentEvent();
 
 nextMonthEvents.addEventListener("click", printNextEvents);
 prevMonthEvents.addEventListener("click", printPrevEvents);
+
+//---------------SHOW THE NEW EVENTS WHEN THE MONTH CHANGES
 
 function printNextEvents() {
     printCurrentEvent();

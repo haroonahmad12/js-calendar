@@ -20,9 +20,6 @@ function alertBox() {
             if (alarmdate === dayNow) {
                 alert("YOU HAVE AN EVENT");
             }
-            console.log(dayNow);
-            console.log(alarmInterval);
-            console.log(alarmdate);
         }
     }
 }

@@ -41,11 +41,12 @@ var prevMonth = document.getElementById("prev-month");
 
 nextMonth.addEventListener("click", followingMonth);
 prevMonth.addEventListener("click", previousMonth);
+//---------------END EVENT LISTENERS
+
+// DECLARING MONTHS AND DISPLAYING MONTHS FUNCTION
 
 month.innerHTML = monthsNames[currentMonth];
 year.innerHTML = currentYear.toString();
-
-printNewMonth(currentMonth);
 
 function monthBeginning() {
     let beginning = new Date(currentYear, currentMonth, 1);
@@ -66,20 +67,37 @@ function createMonth(month) {
             currentYear === new Date().getFullYear()
         ) {
             days.innerHTML += `<div class='every_date today_date' id='${i}_${currentMonth}_${currentYear}'  data-date='every_date'>
-                                        <p class="day_number">${i}</p>
-                                        <button class="plus_button" data-button='plus-button'>+</button>
-                                </div>`;
+                <p class="day_number">${i}</p>
+                <button class="plus_button" data-button='plus-button'>+</button>
+                </div>`;
         } else if (i <= lastDay) {
             days.innerHTML += `<div class='every_date current_month_date' data-date='every_date' id ="${i}_${currentMonth}_${currentYear}">
-                                        <p class="day_number">${i}</p>
-                                        <button class="plus_button" data-button='plus-button'>+</button>
-                                </div>`;
+                <p class="day_number">${i}</p>
+                <button class="plus_button" data-button='plus-button'>+</button>
+                </div>`;
         } else if (i <= lastDay + 1) {
             for (let j = 1; j <= lastCell; j++)
                 days.innerHTML += `<div class='every_date next_month_date'>${j}</div>`;
         }
     }
 }
+
+function printNewMonth() {
+    currentDate.setFullYear(currentYear, currentMonth, currentDay);
+    month.innerHTML = monthsNames[currentMonth];
+    year.innerHTML = currentYear.toString();
+
+    lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+    lastCell = 42 - (lastDay + monthBeginning(currentMonth));
+    days.innerHTML = "";
+    createMonth(currentMonth);
+}
+
+printNewMonth(currentMonth);
+//END FUNCTION: MONTHS DISPLAYED
+
+// MONTH HEADING AND YEAR CHANGING FUNCTION
 
 function followingMonth() {
     if (currentMonth !== 11) {
@@ -101,19 +119,9 @@ function previousMonth() {
     printNewMonth();
 }
 
-function printNewMonth() {
-    currentDate.setFullYear(currentYear, currentMonth, currentDay);
-    month.innerHTML = monthsNames[currentMonth];
-    year.innerHTML = currentYear.toString();
+//END FUNCTION
 
-    lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
-
-    lastCell = 42 - (lastDay + monthBeginning(currentMonth));
-    days.innerHTML = "";
-    createMonth(currentMonth);
-}
-
-// FUNCTION UPDATED TIME
+// FUNCTION TO UPDATE TIME EVERY SECOND
 
 function updateTime() {
     var now = new Date();

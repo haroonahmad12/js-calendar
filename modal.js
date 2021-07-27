@@ -17,12 +17,15 @@ cancelButton.addEventListener("click", closeNewEvent);
 
 // FUNCTIONS
 
+//Get the Minimum Date for Modal Input
 document
     .getElementById("dateTime")
     .setAttribute("min", new Date().toISOString().substring(0, 16));
 document
     .getElementById("end-date")
     .setAttribute("min", new Date().toISOString().substring(0, 10));
+
+// End
 
 function showModal() {
     document.getElementById("modal").classList.remove("is_hidden");
@@ -56,27 +59,38 @@ window.onclick = function(event) {
         document.getElementById("summary_events").classList.add("is_hidden");
         document.getElementById("add-event-form").reset();
     }
+    // THE EVENT MODAL WINDOW CLOSE IF CLICKED OUTSIDE
+    if (
+        document.getElementById("event-modal") !== null &&
+        event.target == document.getElementById("event-modal")
+    ) {
+        document.getElementById("event-modal").remove();
+    }
 };
+
+//CHECKBOX TO SHOW END DATE AND REMINDERS IF NEEDED
 
 document.getElementById("end-date-check").addEventListener("click", checkBox);
 
 function checkBox() {
-    var checkbox = document.getElementById("end-date-check");
     document.getElementById("endDateInput").classList.toggle("hide");
 }
 
 document.getElementById("reminder-check").addEventListener("click", checkBox1);
 
 function checkBox1() {
-    var checkbox = document.getElementById("reminder-check");
     document.getElementById("label-reminder-select").classList.toggle("hide");
 }
+// END CHECKBOX FUNCTION
 
 //ESC keydown Event
 
 window.addEventListener("keydown", (event) => {
     if (event.keyCode === 27) {
         closeNewEvent();
+
         document.getElementById("add-event-form").reset();
     }
 });
+
+//END ESCAPE KEY FUNCTION
