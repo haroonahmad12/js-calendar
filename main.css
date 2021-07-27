@@ -13,11 +13,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
-    margin: auto;
-    max-width: 70rem;
-=======
->>>>>>> new-developer
 }
 
 button {
@@ -41,11 +36,7 @@ button {
 
 .calendar_container {
     width: 100%;
-<<<<<<< HEAD
-    align-content: center;
-=======
     height: 100%;
->>>>>>> new-developer
 }
 
 .dates_container {
