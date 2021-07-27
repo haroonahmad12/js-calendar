@@ -36,48 +36,53 @@
             <button class="close" id="close_modal2">&times;</button>
             <form id="add-event-form">
                 <h2>New Event</h2>
-                <div>
-                    <label>Title:</label> <input id="titleName" type="text" required maxlength="60" /></div>
-                <div><label>Initial Date:</label>
-                    <input type="datetime-local" id="dateTime" required/></div>
-
-
-                <div>
+                <div class="input_div">
+                    <label for="titleName">Title</label> <input id="titleName" class="title_input" type="text" required maxlength="60" /></div>
+                <div class="input_div">
+                    <label for="dateTime">Initial Date</label>
+                    <input type="datetime-local" id="dateTime" class="init_date" required/>
+                </div>
+                <div class="input_div">
                     <label>
                     <input type="checkbox" id="end-date-check" />
                     End date
                   </label>
-                    <label class="hide" id="endDateInput">
+                    <label class="is_hidden" id="endDateInput">
                     <input type="date"  id="end-date" min="" />
                     <input type="time"  id="end-time" min="00:00"/>
                   </label>
                 </div>
-                <div>
-
+                <div class="input_div">
                     <input type="checkbox" id="reminder-check"> Reminder</input>
                     <br>
-                    <label id="label-reminder-select" class="hide">Remind me 
-                <select  id="reminder-select">
-                  <option value="5">5 Minutes</option>
-                  <option value="10">10 Minutes</option>
-                  <option value="30">30 Minutes</option>
-                  <option value="60">1 Hour</option>
-                  <option value="1440"> 1 Day</option>
-                </select>
-                before this event start
-                </label>
-                </div><label>Description:</label><br>
-                <textarea rows="6" cols="40" maxlength="500" id="description"></textarea><br>
-                <label>Event Type:</label><select id="typeEvent">
-                    <option>Meeting</option>
-                    <option>Interview</option>
-                    <option>Sports</option>
-                    <option>Doctors Appointment</option>
-                    <option>Travel Schedule</option>
-                </select>
+                    <label id="label-reminder-select" class="is_hidden">Remind me 
+                    <select  id="reminder-select">
+                        <option value="5">5 Minutes</option>
+                        <option value="10">10 Minutes</option>
+                        <option value="30">30 Minutes</option>
+                        <option value="60">1 Hour</option>
+                        <option value="1440"> 1 Day</option>
+                    </select>
+                    before this event start
+                    </label>
+                </div>
+                <div class="input_div">
+                    <label>Description</label><br>
+                    <textarea rows="6" cols="42" maxlength="500" id="description"></textarea><br>
+                </div>
+                <div class="input_div">
+                    <label for="typeEvent">Event Type </label>
+                    <select id="typeEvent">
+                        <option>Meeting</option>
+                        <option>Interview</option>
+                        <option>Sports</option>
+                        <option>Doctors Appointment</option>
+                        <option>Travel Schedule</option>
+                    </select>
+                </div>
                 <div class="create_cancel_container">
-                    <button class="cancel" id="cancel-btn">Cancel</button>
-                    <button class="create" id="create-btn">Create</button>
+                    <button class="add_event" id="cancel-btn">Cancel</button>
+                    <button class="add_event" id="create-btn">Create</button>
                 </div>
             </form>
         </div>

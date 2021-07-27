@@ -61,15 +61,13 @@ window.onclick = function(event) {
 document.getElementById("end-date-check").addEventListener("click", checkBox);
 
 function checkBox() {
-    var checkbox = document.getElementById("end-date-check");
-    document.getElementById("endDateInput").classList.toggle("hide");
+    document.getElementById("endDateInput").classList.toggle("is_hidden");
 }
 
 document.getElementById("reminder-check").addEventListener("click", checkBox1);
 
 function checkBox1() {
-    var checkbox = document.getElementById("reminder-check");
-    document.getElementById("label-reminder-select").classList.toggle("hide");
+    document.getElementById("label-reminder-select").classList.toggle("is_hidden");
 }
 
 //ESC keydown Event

@@ -13,11 +13,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
-    margin: auto;
-    max-width: 70rem;
-=======
->>>>>>> new-developer
 }
 
 button {
@@ -41,11 +36,7 @@ button {
 
 .calendar_container {
     width: 100%;
-<<<<<<< HEAD
-    align-content: center;
-=======
     height: 100%;
->>>>>>> new-developer
 }
 
 .dates_container {
@@ -113,12 +104,13 @@ button {
 }
 
 .add_event {
-    width: 5rem;
-    height: 2rem;
+    width: auto;
+    height: auto;
     margin: 2rem;
     border-radius: 1rem;
     border: none;
     background-color: rgb(84, 173, 252);
+    padding: 1rem;
 }
 
 .button_month {
@@ -160,6 +152,9 @@ button {
 .every_date:hover>.plus_button {
     display: block;
 }
+.every_date:hover>.day_number {
+    color: black;
+}
 
 .every_date:hover {
     background-color: rgb(116, 217, 248);
@@ -185,18 +180,28 @@ button {
     position: absolute;
     right: 0;
     top: 0;
-    margin: 0.3rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: 0.2rem;
+    padding: 0;
     border-radius: 40%;
+    border: 3px solid white;
+    background-color: rgb(15, 215, 241);
+    font-weight: 900;
+    color: white;
     display: none;
 }
 
 .day_number {
     text-align: center;
+    margin: 0.2rem 0rem;
 }
 
 .today_date .day_number {
-    margin: 0.2rem 0rem;
+    margin: 0;
+    margin-bottom: 0.2rem;
     font-size: 2.2rem;
+    font-weight: 700;
 }
 
 
@@ -218,21 +223,54 @@ button {
 
 .modal_objects {
     background-color: white;
-    width: 30%;
-    flex-flow: column;
+    width: 30rem;
+    display: flex;
+    flex-flow: row;
     justify-content: center;
-    padding: 3rem;
+    padding: 3rem 0;
     margin: auto;
     margin-top: 10%;
+    position: relative;
 }
 
 .modal_summary {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     background-color: white;
-    width: 30%;
+    width: 30rem;
     margin: auto;
     margin-top: 10%;
+    position: relative;
+}
+
+.summary_event{
+    background-color: white;
+    width: 30rem;
+    display: flex;
+    flex-flow: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 10%;
+    position: relative;
+
+}
+.delete_event{
+    margin: 1rem;
+}
+
+.title_input{
+    margin-left: 2.95rem;
+    width: 11.2rem;
+}
+.init_date{
+    margin-left: 0.36rem;
+    width: 11.35rem;
+}
+
+.input_div{
+    margin-top: 0.5rem ;
 }
 
 .day_events {
@@ -242,8 +280,12 @@ button {
 .close_add_container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content:flex-end;
+    
+}
+
+.event-title{
+    margin-top: 0.4rem;
 }
 
 .close {
@@ -251,11 +293,13 @@ button {
     border: none;
     background-color: white;
     border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .create_cancel_container {
     display: flex;
-    margin: 2rem;
     justify-content: center;
 }
 
@@ -267,20 +311,12 @@ button {
     width: 5rem;
 }
 
-.hide {
-    display: none;
-}
 
-
-/* IS HIDDEN CLASS */
-
-.is_hidden {
-    display: none;
-}
+/* CALENDAR EVENTS */
 
 .calendar-event {
     width: 6rem;
-    background-color: red;
+    background-color: rgb(5, 98, 219);
     color: white;
     border-radius: 15px;
     text-align: center;
@@ -288,7 +324,7 @@ button {
 }
 
 .calendar-event:nth-child(2n + 0) {
-    background-color: blue;
+    background-color: rgb(2, 2, 104);
 }
 
 .calendar-event:nth-child(3n + 2) {
@@ -298,4 +334,11 @@ button {
 .event-objects {
     display: flex;
     flex-direction: column;
+    margin: 4rem
+}
+
+/* IS HIDDEN CLASS */
+
+.is_hidden {
+    display: none;
 }
