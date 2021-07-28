@@ -12,7 +12,6 @@
 *::-webkit-scrollbar-thumb {
     background-color: blue;
     border-radius: 20px;
-    scrollbar-width: 4px;
 }
 
 *::-webkit-scrollbar-track {
@@ -121,14 +120,20 @@ button {
 }
 
 .add_event {
-    width: auto;
-    height: auto;
-    margin: 2rem;
-    border-radius: 1rem;
+    color: white;
+    width: 5rem;
+    height: 2rem;
+    margin: 2rem 0 0 1rem;
+    border-radius: 5px;
     border: none;
-    background-color: rgb(84, 173, 252);
-    padding: 1rem;
+    background-color: rgb(15, 215, 241);
     cursor: pointer;
+}
+
+.create_cancel_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .button_month {
@@ -136,7 +141,7 @@ button {
     border-radius: 10%;
     max-width: 8rem;
     color: black;
-    background-color: rgb(84, 173, 252);
+    background-color: rgb(15, 215, 241);
     margin: 1rem;
 }
 
@@ -253,6 +258,7 @@ button {
     margin: auto;
     margin-top: 10%;
     position: relative;
+    border-radius: 10px;
 }
 
 .modal_summary {
@@ -312,18 +318,13 @@ button {
 }
 
 .close {
-    font-weight: bold;
+    color: white;
+    background-color: rgb(116, 217, 248);
     border: none;
-    background-color: white;
-    border-radius: 50%;
+    border-radius: 5px;
     position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.create_cancel_container {
-    display: flex;
-    justify-content: center;
+    top: 2%;
+    right: 2%;
 }
 
 .cancel {
